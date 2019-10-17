@@ -1,9 +1,9 @@
 //
-// Created by p1smartphone imac3 on 17/10/2019.
-// Copyright (c) 2019 norsys. All rights reserved.
+// Created by Tolotra RAHARISON on 17/10/2019.
+// Copyright (c) 2019 Tolotra RAHARISON. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface UIApplication (Extension)
 

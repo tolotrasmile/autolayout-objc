@@ -1,5 +1,5 @@
 //
-//  PlayViewController.h
+//  LAViewController.h
 //  IT_IO
 //
 //  Created by Tolotra RAHARISON on 16/10/2019.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PlayViewController : UIViewController
+@interface LAViewController : UIViewController
 
 @end
 

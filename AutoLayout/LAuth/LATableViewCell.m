@@ -1,19 +1,18 @@
 //
-//  PlayTableViewCell.m
+//  LATableViewCell.m
 //  IT_IO
 //
 //  Created by Tolotra RAHARISON on 16/10/2019.
 //  Copyright © 2019 Tolotra RAHARISON. All rights reserved.
 //
 
-#import "PlayTableViewCell.h"
+#import "LATableViewCell.h"
 #import "UIView+AutoLayout.h"
 #import "UIView+Extension.h"
 
-@implementation PlayTableViewCell {
+@implementation LATableViewCell {
     UILabel *titleLabel;
     UILabel *descriptionLabel;
-    UIImageView *imageView;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -34,9 +33,11 @@
         if ([self respondsToSelector:@selector(setSeparatorInset:)]) {
             [self setSeparatorInset:UIEdgeInsetsZero];
         }
+
         if ([self respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
             [self setPreservesSuperviewLayoutMargins:NO];
         }
+
         if ([self respondsToSelector:@selector(setLayoutMargins:)]) {
             [self setLayoutMargins:UIEdgeInsetsZero];
         }
@@ -49,7 +50,6 @@
         descriptionLabel = [[UILabel alloc] init:container color:UIColor.clearColor];
         descriptionLabel.numberOfLines = 0;
         [descriptionLabel pinToSuperviewEdges:JRTViewPinBottomEdge | JRTViewPinLeftEdge | JRTViewPinRightEdge inset:0.0];
-
         [descriptionLabel pinAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeBottom ofItem:titleLabel withConstant:0];
     }
     return self;

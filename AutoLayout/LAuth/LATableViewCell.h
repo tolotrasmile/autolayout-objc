@@ -1,5 +1,5 @@
 //
-//  PlayTableViewCell.h
+//  LATableViewCell.h
 //  IT_IO
 //
 //  Created by Tolotra RAHARISON on 16/10/2019.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PlayTableViewCell : UITableViewCell
+@interface LATableViewCell : UITableViewCell
 
 - (void)setTitleText:(NSString *)titleText;
 

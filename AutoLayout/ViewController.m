@@ -7,20 +7,17 @@
 //
 
 #import <FontAwesomeKit/FAKFontAwesome.h>
-#import <FontAwesomeKit/FAKZocial.h>
 #import "ViewController.h"
+#import "TodoCell.h"
 #import "UIView+NSLayoutConstraint.h"
 #import "UIView+Extension.h"
-#import "TodoCell.h"
 
 @interface ViewController ()
-
 
 @end
 
 @implementation ViewController {
     UITableView *_tableView;
-    NSArray *items;
 }
 
 - (void)viewDidLoad {
@@ -49,18 +46,6 @@
     return 20;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-        [cell setSeparatorInset:UIEdgeInsetsZero];
-    }
-    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
-        [cell setPreservesSuperviewLayoutMargins:NO];
-    }
-    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-        [cell setLayoutMargins:UIEdgeInsetsZero];
-    }
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
 }
@@ -68,13 +53,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TodoCell *cell = [tableView dequeueReusableCellWithIdentifier:TODO_CELL_ID];
     if (cell == nil) {
-        cell = [[TodoCell alloc] initWithFrame:CGRectZero reuseIdentifier:TODO_CELL_ID];
+        cell = [[TodoCell alloc] init:TODO_CELL_ID];
         [cell setDescriptionText:@"To prevent your passwords from being hacked by social engineering"];
         [cell setTitleText:@"Keep your online accounts safe"];
-
-        UIView *bgColorView = UIView.alloc.init;
-        bgColorView.backgroundColor = [UIColor colorWithRed:240.0 / 256.0 green:240.0 / 256.0 blue:240.0 / 256.0 alpha:0.8];
-        cell.selectedBackgroundView = bgColorView;
     }
     return cell;
 }

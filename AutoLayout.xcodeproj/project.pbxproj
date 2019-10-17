@@ -17,10 +17,16 @@
 		4CF6034A234C6DAA00695C06 /* AutoLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF60349234C6DAA00695C06 /* AutoLayoutTests.m */; };
 		4CF60355234C6DAA00695C06 /* AutoLayoutUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF60354234C6DAA00695C06 /* AutoLayoutUITests.m */; };
 		72C5606474DF479F8FC6F52C /* UIView+NSLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56BF6DAD2B2962B79C6CF /* UIView+NSLayoutConstraint.m */; };
+		72C5614678ACB49940E41A8D /* LAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C567A30B245481D794AAB3 /* LAViewController.m */; };
+		72C565100C27C0C9E0D75329 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C567D3B052949F4B2D7E8C /* UIViewController+Extension.m */; };
 		72C56525324DF56A1CDE6AD9 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56C921F7DEE8D51DFA1EA /* UIView+Extension.m */; };
+		72C56556BEBFCC84BB188815 /* UIApplication+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56C92B7793C977A29882B /* UIApplication+Extension.m */; };
+		72C566A553720443168A7E67 /* UITableViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56D396AAF873C3AEC87C3 /* UITableViewCell+Extension.m */; };
 		72C56A2742FF65351AC29378 /* CustomSafeAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56317750B502F51ED3FE0 /* CustomSafeAreaView.m */; };
 		72C56AE20F682EAF6FC9D542 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C567E65464F0D8998B0265 /* UIView+AutoLayout.m */; };
 		72C56C932A6BBBC448E2B762 /* CAGradientLayer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C560B8F5A28FDBCED1FC68 /* CAGradientLayer+Extension.m */; };
+		72C56F461AF2E05A237F11BB /* LATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56E0152DD9D5973301058 /* LATableViewCell.m */; };
+		72C56FB1D212C0D2F4E92824 /* LAContext+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C5671D80962F183C4D35D2 /* LAContext+Extension.m */; };
 		A6B8447B71AA1DDCFE47EEC0 /* libPods-AutoLayoutUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 883F07AB5058CC1B187C0FDE /* libPods-AutoLayoutUITests.a */; };
 		D22C1D864CDF55EB0D290486 /* libPods-AutoLayoutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DB5B65C0BE3097B2C2D02C /* libPods-AutoLayoutTests.a */; };
 		F783E812C4EC996B05937119 /* libPods-AutoLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B783D1DF343C68B89EAD36 /* libPods-AutoLayout.a */; };
@@ -72,12 +78,24 @@
 		72C562535A0225BA3794D1AB /* CustomSafeAreaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSafeAreaView.h; sourceTree = "<group>"; };
 		72C562677F05AAE3597267CD /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
 		72C56317750B502F51ED3FE0 /* CustomSafeAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSafeAreaView.m; sourceTree = "<group>"; };
+		72C563263FE81600A1AF01ED /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		72C56344AE31CFDB07C10AED /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		72C5656B7C59A919DEC8F238 /* UIApplication+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Extension.h"; sourceTree = "<group>"; };
+		72C565D3C21A45DF6BBEAAB6 /* UITableViewCell+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Extension.h"; sourceTree = "<group>"; };
+		72C5671D80962F183C4D35D2 /* LAContext+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LAContext+Extension.m"; sourceTree = "<group>"; };
+		72C567A30B245481D794AAB3 /* LAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAViewController.m; sourceTree = "<group>"; };
+		72C567D3B052949F4B2D7E8C /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		72C567E65464F0D8998B0265 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		72C5696A280BF065C92DFEB7 /* LAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAViewController.h; sourceTree = "<group>"; };
 		72C5698279AE97406C805BE4 /* CAGradientLayer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAGradientLayer+Extension.h"; sourceTree = "<group>"; };
 		72C56A3CADC3015D4FC3A5AA /* UIView+NSLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NSLayoutConstraint.h"; sourceTree = "<group>"; };
 		72C56BF6DAD2B2962B79C6CF /* UIView+NSLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NSLayoutConstraint.m"; sourceTree = "<group>"; };
 		72C56C921F7DEE8D51DFA1EA /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		72C56C92B7793C977A29882B /* UIApplication+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Extension.m"; sourceTree = "<group>"; };
+		72C56CA067BFED3890D3373F /* LAContext+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LAContext+Extension.h"; sourceTree = "<group>"; };
+		72C56D396AAF873C3AEC87C3 /* UITableViewCell+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Extension.m"; sourceTree = "<group>"; };
+		72C56E0152DD9D5973301058 /* LATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATableViewCell.m; sourceTree = "<group>"; };
+		72C56FB936ACA6B0AA153D1D /* LATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATableViewCell.h; sourceTree = "<group>"; };
 		883F07AB5058CC1B187C0FDE /* libPods-AutoLayoutUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoLayoutUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF7397FCCF3278FBB8ABA793 /* Pods-AutoLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoLayout.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoLayout/Pods-AutoLayout.release.xcconfig"; sourceTree = "<group>"; };
 		CBC7C7EC22D2A54221DD9BB4 /* Pods-AutoLayoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoLayoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoLayoutTests/Pods-AutoLayoutTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +191,7 @@
 				72C56158A7C27779474B2184 /* Extensions */,
 				72C56A2A954BEC6E46FB78DC /* Todo */,
 				72C56800BC59CB5A479347CB /* Shared */,
+				72C569DDCF61A5981F50E13E /* LAuth */,
 			);
 			path = AutoLayout;
 			sourceTree = "<group>";
@@ -206,6 +225,14 @@
 				72C56344AE31CFDB07C10AED /* UIView+Extension.h */,
 				72C5698279AE97406C805BE4 /* CAGradientLayer+Extension.h */,
 				72C562677F05AAE3597267CD /* UIView+AutoLayout.h */,
+				72C56CA067BFED3890D3373F /* LAContext+Extension.h */,
+				72C5671D80962F183C4D35D2 /* LAContext+Extension.m */,
+				72C5656B7C59A919DEC8F238 /* UIApplication+Extension.h */,
+				72C56C92B7793C977A29882B /* UIApplication+Extension.m */,
+				72C563263FE81600A1AF01ED /* UIViewController+Extension.h */,
+				72C567D3B052949F4B2D7E8C /* UIViewController+Extension.m */,
+				72C56D396AAF873C3AEC87C3 /* UITableViewCell+Extension.m */,
+				72C565D3C21A45DF6BBEAAB6 /* UITableViewCell+Extension.h */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,6 +242,17 @@
 			children = (
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		72C569DDCF61A5981F50E13E /* LAuth */ = {
+			isa = PBXGroup;
+			children = (
+				72C56FB936ACA6B0AA153D1D /* LATableViewCell.h */,
+				72C56E0152DD9D5973301058 /* LATableViewCell.m */,
+				72C5696A280BF065C92DFEB7 /* LAViewController.h */,
+				72C567A30B245481D794AAB3 /* LAViewController.m */,
+			);
+			path = LAuth;
 			sourceTree = "<group>";
 		};
 		72C56A2A954BEC6E46FB78DC /* Todo */ = {
@@ -470,6 +508,12 @@
 				72C56525324DF56A1CDE6AD9 /* UIView+Extension.m in Sources */,
 				72C56AE20F682EAF6FC9D542 /* UIView+AutoLayout.m in Sources */,
 				72C56C932A6BBBC448E2B762 /* CAGradientLayer+Extension.m in Sources */,
+				72C56F461AF2E05A237F11BB /* LATableViewCell.m in Sources */,
+				72C5614678ACB49940E41A8D /* LAViewController.m in Sources */,
+				72C56FB1D212C0D2F4E92824 /* LAContext+Extension.m in Sources */,
+				72C56556BEBFCC84BB188815 /* UIApplication+Extension.m in Sources */,
+				72C565100C27C0C9E0D75329 /* UIViewController+Extension.m in Sources */,
+				72C566A553720443168A7E67 /* UITableViewCell+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,15 +685,17 @@
 			baseConfigurationReference = 68103D8EE35FAAEF99AB4F4C /* Pods-AutoLayout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 94PGRRE84M;
 				INFOPLIST_FILE = AutoLayout/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.AutoLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.mobi.moncompte.ameliDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = ameliDev;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
@@ -660,15 +706,17 @@
 			baseConfigurationReference = AF7397FCCF3278FBB8ABA793 /* Pods-AutoLayout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 94PGRRE84M;
 				INFOPLIST_FILE = AutoLayout/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.AutoLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.mobi.moncompte.ameliDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = ameliDev;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};

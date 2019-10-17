@@ -2,7 +2,7 @@
 //  TodoCell.h
 //  AutoLayout
 //
-//  Created by p1smartphone imac3 on 14/10/2019.
+//  Created by Tolotra RAHARISON on 14/10/2019.
 //  Copyright © 2019 Tolotra RAHARISON. All rights reserved.
 //
 
@@ -12,6 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TodoCell : UITableViewCell
+
+- (id)init:(NSString *)reuseIdentifier;
+
 - (void)setTitleText:(NSString *)titleText;
 
 - (void)setDescriptionText:(NSString *)descriptionText;

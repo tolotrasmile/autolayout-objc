@@ -8,7 +8,7 @@
 
 #import <LocalAuthentication/LocalAuthentication.h>
 #import "LAViewController.h"
-#import "PlayTableViewCell.h"
+#import "LATableViewCell.h"
 #import "UIView+AutoLayout.h"
 #import "UIApplication+Extension.h"
 #import "LAContext+Extension.h"
@@ -28,9 +28,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PlayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    LATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[PlayTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        cell = [[LATableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         UIView *bgColorView = UIView.alloc.init;
         bgColorView.backgroundColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.8];
         cell.selectedBackgroundView = bgColorView;

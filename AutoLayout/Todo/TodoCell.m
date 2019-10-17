@@ -2,29 +2,23 @@
 //  TodoCell.m
 //  AutoLayout
 //
-//  Created by p1smartphone imac3 on 14/10/2019.
+//  Created by Tolotra RAHARISON on 14/10/2019.
 //  Copyright © 2019 Tolotra RAHARISON. All rights reserved.
 //
 
 #import <FontAwesomeKit/FAKMaterialIcons.h>
 #import "TodoCell.h"
-#import "UIView+NSLayoutConstraint.h"
 #import "UIView+Extension.h"
 #import "UIView+AutoLayout.h"
+#import "UITableViewCell+Extension.h"
 
 @implementation TodoCell {
     UILabel *titleLabel;
     UILabel *descriptionLabel;
-    UIImageView *imageView;
 }
 
-- (id)init {
-    return [self initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TODO_CELL_ID];
-}
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if ([super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setSelectionStyle:UITableViewCellSelectionStyleDefault];
+- (id)init:(NSString *)reuseIdentifier {
+    if ([super init:reuseIdentifier selectionColor:[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.8]]) {
         FAKMaterialIcons *icon = [FAKMaterialIcons checkCircleIconWithSize:20];
         [icon addAttribute:NSForegroundColorAttributeName value:UIColor.greenColor];
 
@@ -43,7 +37,7 @@
         descriptionLabel.numberOfLines = 0;
         [descriptionLabel pinToSuperviewEdges:JRTViewPinBottomEdge | JRTViewPinLeftEdge | JRTViewPinRightEdge inset:0.0];
 
-        [descriptionLabel pinAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeBottom ofItem:titleLabel withConstant:10];
+        [descriptionLabel pinAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeBottom ofItem:titleLabel withConstant:4];
     }
     return self;
 }
