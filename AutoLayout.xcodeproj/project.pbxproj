@@ -693,7 +693,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.mobi.moncompte.ameliDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = ameliDev;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -714,7 +713,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.mobi.moncompte.ameliDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = ameliDev;
 				TARGETED_DEVICE_FAMILY = "1,2";
