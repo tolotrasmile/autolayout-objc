@@ -8,10 +8,10 @@
 @implementation UIApplication (Extension)
 
 - (void)openAppSettings {
-    [self openExpectedURL:UIApplicationOpenSettingsURLString];
+    [self openURLString:UIApplicationOpenSettingsURLString];
 }
 
-- (void)openExpectedURL:(NSString *)urlString {
+- (void)openURLString:(NSString *)urlString {
     NSURL *url = [NSURL URLWithString:urlString];
     if (url && [UIApplication.sharedApplication canOpenURL:url]) {
         if (@available(iOS 10.0, *)) {

@@ -9,38 +9,21 @@
 #import "LATableViewCell.h"
 #import "UIView+AutoLayout.h"
 #import "UIView+Extension.h"
+#import "UITableViewCell+Extension.h"
 
 @implementation LATableViewCell {
     UILabel *titleLabel;
     UILabel *descriptionLabel;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-}
-
-- (id)init {
+- (instancetype)init {
     return [self initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if ([super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setSelectionStyle:UITableViewCellSelectionStyleDefault];
-
+- (instancetype)init:(NSString *)reuseIdentifier {
+    if ([super init:reuseIdentifier selectionColor:UIColor.redColor]) {
         UIView *container = [[UIView alloc] init:self.contentView color:UIColor.clearColor];
         [container pinToSuperviewEdges:JRTViewPinAllEdges inset:16.0];
-
-        if ([self respondsToSelector:@selector(setSeparatorInset:)]) {
-            [self setSeparatorInset:UIEdgeInsetsZero];
-        }
-
-        if ([self respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
-            [self setPreservesSuperviewLayoutMargins:NO];
-        }
-
-        if ([self respondsToSelector:@selector(setLayoutMargins:)]) {
-            [self setLayoutMargins:UIEdgeInsetsZero];
-        }
 
         titleLabel = [[UILabel alloc] init:container color:UIColor.clearColor];
         titleLabel.font = [UIFont boldSystemFontOfSize:20];

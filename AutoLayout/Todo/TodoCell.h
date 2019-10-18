@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setTitleText:(NSString *)titleText;
 
 - (void)setDescriptionText:(NSString *)descriptionText;
+
 @end
 
 NS_ASSUME_NONNULL_END

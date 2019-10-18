@@ -59,5 +59,4 @@
     self.layer.cornerRadius = cornerRadius;
 }
 
-
 @end

@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LATableViewCell : UITableViewCell
 
+- (instancetype)init:(NSString *)reuseIdentifier;
+
 - (void)setTitleText:(NSString *)titleText;
 
 - (void)setTitleColor:(UIColor *)color;

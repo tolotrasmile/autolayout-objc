@@ -18,7 +18,7 @@
 }
 
 - (id)init:(NSString *)reuseIdentifier {
-    if ([super init:reuseIdentifier selectionColor:[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.8]]) {
+    if ([super init:reuseIdentifier selectionColor:UIColor.redColor]) {
         FAKMaterialIcons *icon = [FAKMaterialIcons checkCircleIconWithSize:20];
         [icon addAttribute:NSForegroundColorAttributeName value:UIColor.greenColor];
 

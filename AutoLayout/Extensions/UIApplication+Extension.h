@@ -16,6 +16,6 @@
  * Open specified URL
  * @param urlString : String URL
  */
-- (void)openExpectedURL:(NSString *)urlString;
+- (void)openURLString:(NSString *)urlString;
 
 @end

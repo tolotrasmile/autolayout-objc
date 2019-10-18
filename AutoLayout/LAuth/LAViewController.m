@@ -30,10 +30,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[LATableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-        UIView *bgColorView = UIView.alloc.init;
-        bgColorView.backgroundColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.8];
-        cell.selectedBackgroundView = bgColorView;
+        cell = [[LATableViewCell alloc] init:cellIdentifier];
     }
 
     NSDictionary *item = items[(NSUInteger) indexPath.row];
@@ -53,12 +50,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
+    return;
     LAContext *context = [LAContext new];
     context.localizedFallbackTitle = @"";
     [context getLAPermission:LAPolicyDeviceOwnerAuthenticationWithBiometrics reason:@"Get LA Code" reply:^(BOOL success, NSError *error, NSInteger code) {
         if (!success) {
             if (code == kLAErrorBiometryNotEnrolled) {
-                [UIApplication.sharedApplication openExpectedURL:@"App-prefs:root=General"];
+                [UIApplication.sharedApplication openURLString:@"App-prefs:root=General"];
             }
         }
         dispatch_async(dispatch_get_main_queue(), ^{
