@@ -36,6 +36,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addGradientLayer:(UIColor *)startColor endColor:(UIColor *)endColor angle:(CGFloat)angle;
 
 /**
+ * Insert or replace layer by name
+ * @param layer new layer
+ */
+- (void)insertOrReplaceLayer:(CALayer *)layer;
+
+/**
  * Circle bounds radius
  */
 - (void)round;

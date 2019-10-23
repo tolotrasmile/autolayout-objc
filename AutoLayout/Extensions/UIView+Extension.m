@@ -34,14 +34,32 @@
 
 - (void)addGradientLayer:(UIColor *)startColor endColor:(UIColor *)endColor angle:(CGFloat)angle {
     CAGradientLayer *gradient = [CAGradientLayer createGradientLayer:startColor endColor:endColor frame:self.bounds angle:angle];
-    [self insertOrReplaceLayer:@"gradient" withLayer:gradient atIndex:0];
+    [self insertOrReplaceLayer:gradient];
 }
 
-- (void)insertOrReplaceLayer:(NSString *)name withLayer:(CALayer *)layer atIndex:(unsigned)index {
-    if ((self.layer.sublayers.count > index) && [self.layer.sublayers[index].name isEqualToString:name]) {
+- (void)insertOrReplaceLayer:(CALayer *)layer atIndex:(unsigned)index {
+    if ((self.layer.sublayers.count > index) && [self.layer.sublayers[index].name isEqualToString:layer.name]) {
         [self.layer replaceSublayer:[self.layer sublayers][index] with:layer];
     } else {
         [self.layer insertSublayer:layer atIndex:index];
+    }
+}
+
+- (void)insertOrReplaceLayer:(CALayer *)layer {
+    BOOL found = false;
+
+    // Find layer to replace by layer name
+    for (CALayer *l in self.layer.sublayers) {
+        if ([l.name isEqualToString:layer.name]) {
+            [self.layer replaceSublayer:layer with:layer];
+            found = true;
+            break;
+        }
+    }
+
+    // Insert layer if not found
+    if (!found) {
+        [self.layer insertSublayer:layer atIndex:0];
     }
 }
 
