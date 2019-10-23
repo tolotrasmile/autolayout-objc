@@ -10,8 +10,8 @@
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UIView   *containerView;
-@property (nonatomic, strong) UIView   *headerView;
+@property(nonatomic, strong) UIView *containerView;
+@property(nonatomic, strong) UIView *headerView;
 
 @end
 

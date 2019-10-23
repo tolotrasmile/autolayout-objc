@@ -7,10 +7,13 @@
 //
 
 #import "LAContext+Extension.h"
+#import "Functions.h"
 
 @implementation LAContext (Extension)
 
-- (void)getLAPermission:(LAPolicy)policy reason:(NSString *)reason reply:(void (^)(BOOL success, NSError *__nullable error, NSInteger code))reply {
+- (void)getPermission:(LAPolicy)policy
+               reason:(NSString *)reason
+                reply:(void (^)(BOOL success, NSError *__nullable error, NSInteger code))reply {
     [self getLAType:policy reply:^(BOOL type, NSError *e) {
         if (type != BiometryTypeNone) {
             [self evaluatePolicy:policy
@@ -38,6 +41,7 @@
      * Evaluer l'accèss
      */
     if (![self canEvaluatePolicy:policy error:&e]) {
+        Log(@"%@ %@", [NSString stringWithUTF8String:__FUNCTION__], e);
         return reply(BiometryTypeNone, e);
     }
 
@@ -57,6 +61,8 @@
         }
         return reply(type, e);
     }
+
+    // Fallback to TouchID
     return reply(BiometryTypeTouchID, e);
 }
 

@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)showAlert:(nullable NSString *)title message:(nullable NSString *)message handler:(void (^ __nullable)(UIAlertAction *action))handler;
 
+- (void)addSubview:(UIView *)view top:(double)top left:(double)left bottom:(double)bottom right:(double)right;
+
 @end
 
 NS_ASSUME_NONNULL_END

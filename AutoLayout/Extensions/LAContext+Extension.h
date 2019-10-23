@@ -18,7 +18,9 @@ typedef NS_ENUM(NSInteger, BiometryType) {
 
 @interface LAContext (Extension)
 
-- (void)getLAPermission:(LAPolicy)policy reason:(NSString *)reason reply:(void (^)(BOOL success, NSError *__nullable error, NSInteger code))reply;
+- (void)getPermission:(LAPolicy)policy
+               reason:(NSString *)reason
+                reply:(void (^)(BOOL success, NSError *__nullable error, NSInteger code))reply;
 
 @end
 

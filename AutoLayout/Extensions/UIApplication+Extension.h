@@ -5,6 +5,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIApplication (Extension)
 
 /**
@@ -19,3 +21,5 @@
 - (void)openURLString:(NSString *)urlString;
 
 @end
+
+NS_ASSUME_NONNULL_END

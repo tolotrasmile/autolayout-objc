@@ -4,6 +4,7 @@
 //
 
 #import "CustomSafeAreaView.h"
+#import "NSObject+Extension.h"
 
 @implementation CustomSafeAreaView {
 

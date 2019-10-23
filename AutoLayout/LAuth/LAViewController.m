@@ -12,6 +12,7 @@
 #import "UIView+AutoLayout.h"
 #import "UIApplication+Extension.h"
 #import "LAContext+Extension.h"
+#import "Functions.h"
 
 @interface LAViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -44,16 +45,14 @@
 
 - (void)reloadWithCode:(NSInteger)code {
     _errorCode = (int) code;
-    NSLog(@"errorCode=%d,  error=%d", _errorCode, (int) code);
     [_tableView reloadData];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
-    return;
     LAContext *context = [LAContext new];
     context.localizedFallbackTitle = @"";
-    [context getLAPermission:LAPolicyDeviceOwnerAuthenticationWithBiometrics reason:@"Get LA Code" reply:^(BOOL success, NSError *error, NSInteger code) {
+    [context getPermission:LAPolicyDeviceOwnerAuthenticationWithBiometrics reason:@"Get LA Code" reply:^(BOOL success, NSError *error, NSInteger code) {
         if (!success) {
             if (code == kLAErrorBiometryNotEnrolled) {
                 [UIApplication.sharedApplication openURLString:@"App-prefs:root=General"];
@@ -62,7 +61,6 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self reloadWithCode:code];
         });
-        NSLog(@"code=%d, success=%d error=%@", (int) code, success, error);
     }];
 }
 
@@ -95,6 +93,7 @@
             @{@"key": @"kLAErrorInvalidContext", @"value": @(kLAErrorInvalidContext)},
             @{@"key": @"kLAErrorNotInteractive", @"value": @(kLAErrorNotInteractive)},
     ];
+    Log(@"%@", UIApplicationOpenSettingsURLString);
 }
 
 

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CAGradientLayer(Extension)
+@interface CAGradientLayer (Extension)
 
 + (CAGradientLayer *)createGradientLayer:(UIColor *)startColor endColor:(UIColor *)endColor frame:(CGRect)frame angle:(CGFloat)angle;
 

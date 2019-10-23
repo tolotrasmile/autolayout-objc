@@ -11,6 +11,7 @@
     [self openURLString:UIApplicationOpenSettingsURLString];
 }
 
+
 - (void)openURLString:(NSString *)urlString {
     NSURL *url = [NSURL URLWithString:urlString];
     if (url && [UIApplication.sharedApplication canOpenURL:url]) {

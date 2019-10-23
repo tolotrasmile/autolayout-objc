@@ -8,6 +8,6 @@
 
 @interface CustomSafeAreaView : UIView
 
-@property (nonatomic, strong) UIView   *container;
+@property(nonatomic, strong) UIView *container;
 
 @end
