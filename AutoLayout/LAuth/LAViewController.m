@@ -45,7 +45,9 @@
 
 - (void)reloadWithCode:(NSInteger)code {
     _errorCode = (int) code;
-    [_tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_tableView reloadData];
+    });
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,9 +60,7 @@
                 [UIApplication.sharedApplication openURLString:@"App-prefs:root=General"];
             }
         }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self reloadWithCode:code];
-        });
+        [self reloadWithCode:code];
     }];
 }
 
