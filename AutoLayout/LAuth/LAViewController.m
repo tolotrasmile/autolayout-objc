@@ -13,6 +13,7 @@
 #import "UIApplication+Extension.h"
 #import "LAContext+Extension.h"
 #import "Functions.h"
+#import "UITableView+Extension.h"
 
 @interface LAViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -43,10 +44,10 @@
     return cell;
 }
 
-- (void)reloadWithCode:(NSInteger)code {
+- (void)setErrorCode:(NSInteger)code {
     _errorCode = (int) code;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [_tableView reloadData];
+        [self->_tableView reloadData];
     });
 }
 
@@ -60,18 +61,12 @@
                 [UIApplication.sharedApplication openURLString:@"App-prefs:root=General"];
             }
         }
-        [self reloadWithCode:code];
+        [self setErrorCode:code];
     }];
 }
 
 - (void)initTableView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    _tableView.backgroundColor = UIColor.whiteColor;
-    _tableView.estimatedRowHeight = 80;
-    _tableView.rowHeight = UITableViewAutomaticDimension;
-    [_tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    _tableView = [[UITableView alloc] initWithStyle:UITableViewStylePlain estimatedRowHeight:80 withParent:self];
     [self.view addSubview:_tableView];
     [_tableView pinToSuperviewEdges:JRTViewPinAllEdges inset:0];
 }
