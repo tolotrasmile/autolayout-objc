@@ -10,10 +10,12 @@
 #import "UIView+AutoLayout.h"
 #import "UIView+Extension.h"
 #import "UITableViewCell+Extension.h"
+#import "TRButton.h"
 
 @implementation LATableViewCell {
     UILabel *titleLabel;
     UILabel *descriptionLabel;
+    TRButton *button;
 }
 
 - (instancetype)init {
@@ -24,6 +26,7 @@
     if ([super init:reuseIdentifier selectionColor:UIColor.redColor]) {
         UIView *container = [[UIView alloc] init:self.contentView color:UIColor.clearColor];
         [container pinToSuperviewEdges:JRTViewPinAllEdges inset:16.0];
+        self.backgroundColor = UIColor.whiteColor;
 
         titleLabel = [[UILabel alloc] init:container color:UIColor.clearColor];
         titleLabel.font = [UIFont boldSystemFontOfSize:20];
@@ -32,10 +35,30 @@
 
         descriptionLabel = [[UILabel alloc] init:container color:UIColor.clearColor];
         descriptionLabel.numberOfLines = 0;
-        [descriptionLabel pinToSuperviewEdges:JRTViewPinBottomEdge | JRTViewPinLeftEdge | JRTViewPinRightEdge inset:0.0];
+        descriptionLabel.textColor = UIColor.grayColor;
+        [descriptionLabel pinToSuperviewEdges:JRTViewPinLeftEdge | JRTViewPinRightEdge inset:0.0];
         [descriptionLabel pinAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeBottom ofItem:titleLabel withConstant:0];
+
+        button = [[TRButton alloc] initWithFrame:CGRectZero];
+        button.backgroundColor = UIColor.blueColor;
+        button.translatesAutoresizingMaskIntoConstraints = NO;
+        button.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+        button.cornerRadius = 8;
+        [container addSubview:button];
+
+        [button addConstraints:@[[button constrainToHeight:50]]];
+        [button pinToSuperviewEdges:JRTViewPinBottomEdge | JRTViewPinLeftEdge | JRTViewPinRightEdge inset:0.0];
+        [button pinAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeBottom ofItem:descriptionLabel withConstant:10];
+        [button addTarget:self action:@selector(onPress:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
+}
+
+- (void)onPress:(id)sender {
+    NSLog(@"Pressed");
+}
+
+- (void)log {
 }
 
 - (void)setTitleText:(NSString *)titleText {

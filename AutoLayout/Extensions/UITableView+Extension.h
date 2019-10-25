@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableView (Extension)
 
-- (instancetype)initWithStyle:(UITableViewStyle)style estimatedRowHeight:(CGFloat)estimatedRowHeight withParent:(id <UITableViewDataSource, UITableViewDelegate>)parent;
+- (instancetype)initWithStyle:(UITableViewStyle)style estimatedRowHeight:(CGFloat)estimatedRowHeight withParent:(UIViewController <UITableViewDataSource, UITableViewDelegate> *)parent;
 
 @end
 

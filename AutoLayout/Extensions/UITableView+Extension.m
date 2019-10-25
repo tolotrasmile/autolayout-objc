@@ -10,18 +10,22 @@
 
 @implementation UITableView (Extension)
 
-- (instancetype)initWithStyle:(UITableViewStyle)style estimatedRowHeight:(CGFloat)estimatedRowHeight withParent:(id <UITableViewDataSource, UITableViewDelegate>)parent {
-    if ([self initWithFrame:CGRectZero style:style]) {
+- (instancetype)initWithStyle:(UITableViewStyle)style estimatedRowHeight:(CGFloat)estimatedRowHeight withParent:(UIViewController <UITableViewDataSource, UITableViewDelegate> *)parent {
+    if ([self initWithStyle:style withParent:parent]) {
         self.rowHeight = UITableViewAutomaticDimension;
         self.estimatedRowHeight = estimatedRowHeight;
-        self.sectionHeaderHeight = UITableViewAutomaticDimension;
-        self.estimatedSectionHeaderHeight = estimatedRowHeight;
-        self.sectionFooterHeight = UITableViewAutomaticDimension;
-        self.sectionFooterHeight = estimatedRowHeight;
+    }
+    return self;
+}
+
+- (instancetype)initWithStyle:(UITableViewStyle)style withParent:(UIViewController <UITableViewDataSource, UITableViewDelegate> *)parent {
+    if ([self initWithFrame:CGRectZero style:style]) {
         self.dataSource = parent;
         self.delegate = parent;
         self.backgroundColor = UIColor.whiteColor;
         self.translatesAutoresizingMaskIntoConstraints = NO;
+        self.separatorInset = UIEdgeInsetsZero;
+        self.backgroundView = nil;
     }
     return self;
 }

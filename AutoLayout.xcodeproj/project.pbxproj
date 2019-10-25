@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4C3017952354B63D00AE7F61 /* TodoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3017942354B63D00AE7F61 /* TodoCell.m */; };
 		4CE4352C2362EFE2006D5E97 /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4352B2362EFE2006D5E97 /* UITableView+Extension.m */; };
+		4CE4352F236319B5006D5E97 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4352E236319B5006D5E97 /* UIButton+Extension.m */; };
+		4CE435332363326F006D5E97 /* TRButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE435322363326E006D5E97 /* TRButton.m */; };
 		4CF60332234C6DA800695C06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF60331234C6DA800695C06 /* AppDelegate.m */; };
 		4CF60335234C6DA800695C06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF60334234C6DA800695C06 /* ViewController.m */; };
 		4CF60338234C6DA800695C06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF60336234C6DA800695C06 /* Main.storyboard */; };
@@ -61,6 +63,10 @@
 		4C3017942354B63D00AE7F61 /* TodoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoCell.m; sourceTree = "<group>"; };
 		4CE4352A2362EFE2006D5E97 /* UITableView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extension.h"; sourceTree = "<group>"; };
 		4CE4352B2362EFE2006D5E97 /* UITableView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extension.m"; sourceTree = "<group>"; };
+		4CE4352D236319B5006D5E97 /* UIButton+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		4CE4352E236319B5006D5E97 /* UIButton+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
+		4CE435312363326E006D5E97 /* TRButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRButton.h; sourceTree = "<group>"; };
+		4CE435322363326E006D5E97 /* TRButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TRButton.m; sourceTree = "<group>"; };
 		4CF6032D234C6DA800695C06 /* AutoLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF60330234C6DA800695C06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4CF60331234C6DA800695C06 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -162,6 +168,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4CE435302363324C006D5E97 /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				4CE435312363326E006D5E97 /* TRButton.h */,
+				4CE435322363326E006D5E97 /* TRButton.m */,
+			);
+			path = Customs;
+			sourceTree = "<group>";
+		};
 		4CF60324234C6DA800695C06 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +213,7 @@
 				4CF6033F234C6DAA00695C06 /* main.m */,
 				72C56317750B502F51ED3FE0 /* CustomSafeAreaView.m */,
 				72C562535A0225BA3794D1AB /* CustomSafeAreaView.h */,
+				4CE435302363324C006D5E97 /* Customs */,
 				72C56158A7C27779474B2184 /* Extensions */,
 				72C56A2A954BEC6E46FB78DC /* Todo */,
 				72C56800BC59CB5A479347CB /* Shared */,
@@ -250,6 +266,8 @@
 				72C56A34CF38B1BDE7511E6D /* NSOperationQueue+CWSharedQueue.m */,
 				4CE4352A2362EFE2006D5E97 /* UITableView+Extension.h */,
 				4CE4352B2362EFE2006D5E97 /* UITableView+Extension.m */,
+				4CE4352D236319B5006D5E97 /* UIButton+Extension.h */,
+				4CE4352E236319B5006D5E97 /* UIButton+Extension.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -524,8 +542,10 @@
 				4CE4352C2362EFE2006D5E97 /* UITableView+Extension.m in Sources */,
 				72C5606474DF479F8FC6F52C /* UIView+NSLayoutConstraint.m in Sources */,
 				72C56525324DF56A1CDE6AD9 /* UIView+Extension.m in Sources */,
+				4CE4352F236319B5006D5E97 /* UIButton+Extension.m in Sources */,
 				72C56AE20F682EAF6FC9D542 /* UIView+AutoLayout.m in Sources */,
 				72C56C932A6BBBC448E2B762 /* CAGradientLayer+Extension.m in Sources */,
+				4CE435332363326F006D5E97 /* TRButton.m in Sources */,
 				72C56F461AF2E05A237F11BB /* LATableViewCell.m in Sources */,
 				72C5614678ACB49940E41A8D /* LAViewController.m in Sources */,
 				72C56FB1D212C0D2F4E92824 /* LAContext+Extension.m in Sources */,
