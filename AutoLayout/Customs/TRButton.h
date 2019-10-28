@@ -14,10 +14,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TRButton : UIControl
 
 @property(nullable, nonatomic, strong) UILabel *titleLabel;
+@property(nonatomic, strong) UIActivityIndicatorView *loader;
 @property(nonatomic) UIEdgeInsets insets;
+@property(nonatomic, readonly, getter=isLoading) BOOL animating;
 @property(nonatomic) CGFloat cornerRadius;
 
 - (void)setEdgeInsets:(UIEdgeInsets)edgeInsets;
+
+- (void)setText:(nullable NSString *)text;
+
+- (void)setIsLoading:(BOOL)isLoading;
 
 @end
 

@@ -5,20 +5,31 @@
 //  Created by p1smartphone imac3 on 25/10/2019.
 //  Copyright © 2019 Tolotra RAHARISON. All rights reserved.
 //
-
 #import "TRButton.h"
 
 @implementation TRButton {
     BOOL pressed;
+    BOOL loading;
     CGFloat opacity;
 }
+
+const static CGFloat TRButtonAnimationDuration = 0.5f;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.titleLabel = [[UILabel alloc] init];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        self.titleLabel.text = [@"PRESS ME" uppercaseString];
+        self.titleLabel.textColor = UIColor.whiteColor;
+        self.text = @"button";
         [self addSubview:self.titleLabel];
+
+        self.loader = [[UIActivityIndicatorView alloc] init];
+        self.loader.alpha = 0;
+        self.loader.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+        self.loader.color = UIColor.whiteColor;
+        self.loader.hidesWhenStopped = true;
+        [self addSubview:self.loader];
+
         self.insets = UIEdgeInsetsZero;
     }
     return self;
@@ -41,6 +52,7 @@
             self.bounds.size.width - self.insets.left - self.insets.right,
             self.bounds.size.height - self.insets.top - self.insets.bottom
     );
+    self.loader.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
     [self updateCornerRadius];
 }
 
@@ -49,10 +61,40 @@
     [backgroundColor getRed:nil green:nil blue:nil alpha:&opacity];
 }
 
+- (void)setText:(nullable NSString *)text {
+    if (text != nil) {
+        self.titleLabel.text = [text uppercaseString];
+    }
+}
+
+- (BOOL)isLoading {
+    return loading;
+}
+
+- (void)setIsLoading:(BOOL)isLoading {
+    loading = isLoading;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (loading) {
+            [self.loader startAnimating];
+            [UIView animateWithDuration:TRButtonAnimationDuration animations:^{
+                self.titleLabel.alpha = 0;
+                self.loader.alpha = 1;
+            }];
+        } else {
+            [self.loader stopAnimating];
+            [UIView animateWithDuration:TRButtonAnimationDuration animations:^{
+                self.titleLabel.alpha = 1;
+                self.loader.alpha = 0;
+            }];
+        }
+    });
+}
+
 - (void)setPressed:(BOOL)value {
     pressed = value;
-    [UIView animateWithDuration:0.3 animations:^{
-        self.alpha = pressed ? opacity / 2 : opacity;
+    CGFloat alpha = pressed ? opacity / 3 : opacity;
+    [UIView animateWithDuration:TRButtonAnimationDuration animations:^{
+        self.alpha = alpha;
     }];
 }
 

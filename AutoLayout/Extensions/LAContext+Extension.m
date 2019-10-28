@@ -7,7 +7,6 @@
 //
 
 #import "LAContext+Extension.h"
-#import "Functions.h"
 
 @implementation LAContext (Extension)
 
@@ -41,7 +40,6 @@
      * Evaluer l'accèss
      */
     if (![self canEvaluatePolicy:policy error:&e]) {
-        Log(@"%@ %@", [NSString stringWithUTF8String:__FUNCTION__], e);
         return reply(BiometryTypeNone, e);
     }
 

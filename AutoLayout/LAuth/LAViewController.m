@@ -88,7 +88,6 @@
             @{@"key": @"kLAErrorInvalidContext", @"value": @(kLAErrorInvalidContext)},
             @{@"key": @"kLAErrorNotInteractive", @"value": @(kLAErrorNotInteractive)},
     ];
-    Log(@"%@", UIApplicationOpenSettingsURLString);
 }
 
 

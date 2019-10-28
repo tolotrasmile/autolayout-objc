@@ -16,6 +16,7 @@
     UILabel *titleLabel;
     UILabel *descriptionLabel;
     TRButton *button;
+    BOOL isLoading;
 }
 
 - (instancetype)init {
@@ -27,7 +28,7 @@
         UIView *container = [[UIView alloc] init:self.contentView color:UIColor.clearColor];
         [container pinToSuperviewEdges:JRTViewPinAllEdges inset:16.0];
         self.backgroundColor = UIColor.whiteColor;
-
+        isLoading = true;
         titleLabel = [[UILabel alloc] init:container color:UIColor.clearColor];
         titleLabel.font = [UIFont boldSystemFontOfSize:20];
         titleLabel.numberOfLines = 1;
@@ -44,6 +45,7 @@
         button.translatesAutoresizingMaskIntoConstraints = NO;
         button.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
         button.cornerRadius = 8;
+        button.isLoading = isLoading;
         [container addSubview:button];
 
         [button addConstraints:@[[button constrainToHeight:50]]];
@@ -55,7 +57,8 @@
 }
 
 - (void)onPress:(id)sender {
-    NSLog(@"Pressed");
+    NSLog(@"Pressed %@", sender);
+    button.isLoading = isLoading = !isLoading;
 }
 
 - (void)log {
