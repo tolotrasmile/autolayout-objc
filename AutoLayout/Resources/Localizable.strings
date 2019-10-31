@@ -1,0 +1,15 @@
+/****************************************************************************/
+/* Localization file */
+
+"settings_gluten"          = "Mes prises en charge de la maladie cœliaque";
+"settings_enable_service"  = "Activer le service";
+
+"settings_security_number" = "Mon numéro de sécurité sociale";
+"settings_save"            = "Mémoriser";
+
+"settings_biometric"       =  "Authentification biométrique";
+"settings_touch_id"        = "Empreinte digitale";
+"settings_face_id"         = "Reconnaissance faciale";
+
+"settings_conditions"      = "Conditions et confidentialité";
+"settings_version"         = "Version";

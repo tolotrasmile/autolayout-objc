@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SettingsViewController : UITableViewController
+@interface SettingsViewController : UITableViewController <SettingsCellDelegate>
 
 @end
 

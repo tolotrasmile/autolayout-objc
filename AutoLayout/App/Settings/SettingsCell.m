@@ -44,6 +44,7 @@
     button = [[UISegmentedControl alloc] initWithItems:@[@"OUI", @"NON"]];
     button.translatesAutoresizingMaskIntoConstraints = NO;
     button.tintColor = kBlueColor;
+    [button addTarget:self action:@selector(selectionDidChange:) forControlEvents:UIControlEventValueChanged];
     [button setWidth:50 forSegmentAtIndex:0];
     [button setWidth:50 forSegmentAtIndex:1];
     [bottom addSubview:button];
@@ -54,12 +55,22 @@
   return self;
 }
 
-- (void)setEnabled:(BOOL)enabled {
-  [self setUserInteractionEnabled:enabled];
-  CGFloat alpha = enabled ? 1.0 : 0.4;
+- (void)selectionDidChange:(UISegmentedControl *)sender {
+  if (self.delegate && [self.delegate respondsToSelector:@selector(didChangeState:key:indexPath:)]) {
+    [[self delegate] didChangeState:(BOOL) sender.selectedSegmentIndex key:self.key indexPath:self.indexPath];
+  }
+}
+
+- (void)setAccessible:(BOOL)accessible {
+  [self setUserInteractionEnabled:accessible];
+  CGFloat alpha = accessible ? 1.0 : 0.4;
   [UIView animateWithDuration:0.5 animations:^{
     self.titleLabel.alpha = self.descriptionLabel.alpha = self.button.alpha = alpha;
   }];
+}
+
+- (void)setActive:(BOOL)active {
+  self.button.selectedSegmentIndex = active ? 0 : 1;
 }
 
 @end
