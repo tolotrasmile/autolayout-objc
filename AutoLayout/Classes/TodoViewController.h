@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TodoViewController.h
 //  AutoLayout
 //
 //  Created by Tolotra RAHARISON on 08/10/2019.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TodoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, strong) UIView *containerView;
 @property(nonatomic, strong) UIView *headerView;

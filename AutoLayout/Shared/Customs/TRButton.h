@@ -2,7 +2,7 @@
 //  TRButton.h
 //  AutoLayout
 //
-//  Created by p1smartphone imac3 on 25/10/2019.
+//  Created by Tolotra RAHARISON on 25/10/2019.
 //  Copyright © 2019 Tolotra RAHARISON. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nullable, nonatomic, strong) UILabel *titleLabel;
 @property(nonatomic, strong) UIActivityIndicatorView *loader;
 @property(nonatomic) UIEdgeInsets insets;
-@property(nonatomic, readonly, getter=isLoading) BOOL animating;
+@property(nonatomic, readonly, getter=isLoading) BOOL loading;
 @property(nonatomic) CGFloat cornerRadius;
 
 - (void)setEdgeInsets:(UIEdgeInsets)edgeInsets;

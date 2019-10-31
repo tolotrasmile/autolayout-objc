@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  TodoViewController.m
 //  AutoLayout
 //
 //  Created by Tolotra RAHARISON on 08/10/2019.
@@ -7,16 +7,16 @@
 //
 
 #import <FontAwesomeKit/FAKFontAwesome.h>
-#import "ViewController.h"
+#import "TodoViewController.h"
 #import "TodoCell.h"
 #import "UIView+NSLayoutConstraint.h"
 #import "UIView+Extension.h"
 
-@interface ViewController ()
+@interface TodoViewController ()
 
 @end
 
-@implementation ViewController {
+@implementation TodoViewController {
     UITableView *_tableView;
 }
 

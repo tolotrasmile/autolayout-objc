@@ -8,14 +8,12 @@
 
 #import <LocalAuthentication/LocalAuthentication.h>
 #import "LAViewController.h"
-#import "LATableViewCell.h"
 #import "UIView+AutoLayout.h"
 #import "UIApplication+Extension.h"
 #import "LAContext+Extension.h"
-#import "Functions.h"
 #import "UITableView+Extension.h"
 
-@interface LAViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface LAViewController () <UITableViewDataSource, UITableViewDelegate, LATableViewCellDelegate>
 
 @end
 
@@ -39,6 +37,7 @@
 
     [cell setTitleText:[NSString stringWithFormat:@"%@: %@", item[@"key"], item[@"value"]]];
     [cell setTitleColor:_errorCode == [item[@"value"] intValue] ? UIColor.redColor : UIColor.blackColor];
+    cell.delegate = self;
 
     [cell setDescriptionText:[NSString stringWithFormat:@"ERROR CODE: %d", _errorCode]];
     return cell;
@@ -53,16 +52,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
-    LAContext *context = [LAContext new];
-    context.localizedFallbackTitle = @"";
-    [context getPermission:LAPolicyDeviceOwnerAuthenticationWithBiometrics reason:@"Get LA Code" reply:^(BOOL success, NSError *error, NSInteger code) {
-        if (!success) {
-            if (code == kLAErrorBiometryNotEnrolled) {
-                [UIApplication.sharedApplication openURLString:@"App-prefs:root=General"];
-            }
-        }
-        [self setErrorCode:code];
-    }];
 }
 
 - (void)initTableView {
@@ -83,11 +72,35 @@
             @{@"key": @"kLAErrorPasscodeNotSet", @"value": @(kLAErrorPasscodeNotSet)},
             @{@"key": @"kLAErrorBiometryNotAvailable", @"value": @(kLAErrorBiometryNotAvailable)},
             @{@"key": @"kLAErrorBiometryNotEnrolled", @"value": @(kLAErrorBiometryNotEnrolled)},
-            @{@"key": @"kLAErrorBiometryLockout", @"value": @(kLAErrorBiometryLockout)},
+            @{@"key": @"kLAErrorBiometryLockout", @"value": @(LAErrorBiometryLockout)},
             @{@"key": @"kLAErrorAppCancel", @"value": @(kLAErrorAppCancel)},
             @{@"key": @"kLAErrorInvalidContext", @"value": @(kLAErrorInvalidContext)},
             @{@"key": @"kLAErrorNotInteractive", @"value": @(kLAErrorNotInteractive)},
     ];
+
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(didActive:) name:UIApplicationWillEnterForegroundNotification object:nil];
+}
+
+- (void)didActive:(id)didActive {
+    NSLog(@"UIApplicationWillEnterForegroundNotification : %@", UIApplicationWillEnterForegroundNotification);
+}
+
+- (void)dealloc {
+    [NSNotificationCenter.defaultCenter removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+}
+
+
+- (void)onClick:(NSObject *)sender {
+    LAContext *context = [LAContext new];
+    context.localizedFallbackTitle = @"";
+    [context getPermission:LAPolicyDeviceOwnerAuthenticationWithBiometrics reason:@"Get LA Code" reply:^(BOOL success, NSError *error, NSInteger code) {
+        if (!success) {
+            if (code == kLAErrorBiometryNotEnrolled) {
+                [UIApplication.sharedApplication openURLString:@"App-prefs:root=General"];
+            }
+        }
+        [self setErrorCode:code];
+    }];
 }
 
 

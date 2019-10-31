@@ -20,17 +20,21 @@ PODS:
     - FontAwesomeKit/Core
   - FontAwesomeKit/Zocial (2.2.1):
     - FontAwesomeKit/Core
+  - Masonry (1.1.0)
 
 DEPENDENCIES:
   - FontAwesomeKit (~> 2.2.0)
+  - Masonry
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FontAwesomeKit
+    - Masonry
 
 SPEC CHECKSUMS:
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 29157d03af4ef477e1583a1fb6f23ab5fe9e2a5f
+PODFILE CHECKSUM: 968230610a30ae7cafe68509fa30e1fbe95040fb
 
 COCOAPODS: 1.5.3

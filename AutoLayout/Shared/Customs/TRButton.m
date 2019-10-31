@@ -2,7 +2,7 @@
 //  TRButton.m
 //  AutoLayout
 //
-//  Created by p1smartphone imac3 on 25/10/2019.
+//  Created by Tolotra RAHARISON on 25/10/2019.
 //  Copyright © 2019 Tolotra RAHARISON. All rights reserved.
 //
 #import "TRButton.h"
@@ -104,7 +104,7 @@ const static CGFloat TRButtonAnimationDuration = 0.5f;
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
     if (pressed) {
-        [self sendActionsForControlEvents:UIControlEventTouchUpInside];
+        [self sendActionsForControlEvents:UIControlEventAllEvents];
     }
     [self setPressed:false];
 }

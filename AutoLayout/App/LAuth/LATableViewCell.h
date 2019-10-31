@@ -10,7 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol LATableViewCellDelegate <NSObject>
+
+- (void)onClick:(NSObject *)sender;
+
+@end
+
 @interface LATableViewCell : UITableViewCell
+
+@property(nonatomic, nullable) id <LATableViewCellDelegate> delegate;
 
 - (instancetype)init:(NSString *)reuseIdentifier;
 

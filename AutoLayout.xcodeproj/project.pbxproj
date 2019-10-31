@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4C3017952354B63D00AE7F61 /* TodoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3017942354B63D00AE7F61 /* TodoCell.m */; };
+		4C4E5D89236893650096AC3C /* UILabel+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4E5D88236893650096AC3C /* UILabel+Utility.m */; };
 		4CE4352C2362EFE2006D5E97 /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4352B2362EFE2006D5E97 /* UITableView+Extension.m */; };
 		4CE4352F236319B5006D5E97 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4352E236319B5006D5E97 /* UIButton+Extension.m */; };
 		4CE435332363326F006D5E97 /* TRButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE435322363326E006D5E97 /* TRButton.m */; };
 		4CF60332234C6DA800695C06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF60331234C6DA800695C06 /* AppDelegate.m */; };
-		4CF60335234C6DA800695C06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF60334234C6DA800695C06 /* ViewController.m */; };
+		4CF60335234C6DA800695C06 /* TodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF60334234C6DA800695C06 /* TodoViewController.m */; };
 		4CF60338234C6DA800695C06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF60336234C6DA800695C06 /* Main.storyboard */; };
 		4CF6033A234C6DAA00695C06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF60339234C6DAA00695C06 /* Assets.xcassets */; };
 		4CF6033D234C6DAA00695C06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6033B234C6DAA00695C06 /* LaunchScreen.storyboard */; };
@@ -61,6 +62,8 @@
 		34B783D1DF343C68B89EAD36 /* libPods-AutoLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoLayout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3017932354B63D00AE7F61 /* TodoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodoCell.h; sourceTree = "<group>"; };
 		4C3017942354B63D00AE7F61 /* TodoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoCell.m; sourceTree = "<group>"; };
+		4C4E5D87236893650096AC3C /* UILabel+Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Utility.h"; sourceTree = "<group>"; };
+		4C4E5D88236893650096AC3C /* UILabel+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Utility.m"; sourceTree = "<group>"; };
 		4CE4352A2362EFE2006D5E97 /* UITableView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extension.h"; sourceTree = "<group>"; };
 		4CE4352B2362EFE2006D5E97 /* UITableView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extension.m"; sourceTree = "<group>"; };
 		4CE4352D236319B5006D5E97 /* UIButton+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
@@ -70,8 +73,8 @@
 		4CF6032D234C6DA800695C06 /* AutoLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF60330234C6DA800695C06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4CF60331234C6DA800695C06 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4CF60333234C6DA800695C06 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4CF60334234C6DA800695C06 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4CF60333234C6DA800695C06 /* TodoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodoViewController.h; sourceTree = "<group>"; };
+		4CF60334234C6DA800695C06 /* TodoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoViewController.m; sourceTree = "<group>"; };
 		4CF60337234C6DA800695C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CF60339234C6DAA00695C06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CF6033C234C6DAA00695C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -168,9 +171,50 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4C0F95CF236ADEE0001B029D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4CF6033F234C6DAA00695C06 /* main.m */,
+				4CF60330234C6DA800695C06 /* AppDelegate.h */,
+				4CF60331234C6DA800695C06 /* AppDelegate.m */,
+				4CF60333234C6DA800695C06 /* TodoViewController.h */,
+				4CF60334234C6DA800695C06 /* TodoViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4C0F95D0236ADEF0001B029D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4CF60336234C6DA800695C06 /* Main.storyboard */,
+				4CF60339234C6DAA00695C06 /* Assets.xcassets */,
+				4CF6033B234C6DAA00695C06 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4C0F95D1236ADF2C001B029D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				72C565FD72589F2930FF1821 /* Functions.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4C0F95D2236AE048001B029D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				72C569DDCF61A5981F50E13E /* LAuth */,
+				72C56A2A954BEC6E46FB78DC /* Todo */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		4CE435302363324C006D5E97 /* Customs */ = {
 			isa = PBXGroup;
 			children = (
+				72C56317750B502F51ED3FE0 /* CustomSafeAreaView.m */,
+				72C562535A0225BA3794D1AB /* CustomSafeAreaView.h */,
 				4CE435312363326E006D5E97 /* TRButton.h */,
 				4CE435322363326E006D5E97 /* TRButton.m */,
 			);
@@ -202,22 +246,11 @@
 		4CF6032F234C6DA800695C06 /* AutoLayout */ = {
 			isa = PBXGroup;
 			children = (
-				4CF60330234C6DA800695C06 /* AppDelegate.h */,
-				4CF60331234C6DA800695C06 /* AppDelegate.m */,
-				4CF60333234C6DA800695C06 /* ViewController.h */,
-				4CF60334234C6DA800695C06 /* ViewController.m */,
-				4CF60336234C6DA800695C06 /* Main.storyboard */,
-				4CF60339234C6DAA00695C06 /* Assets.xcassets */,
-				4CF6033B234C6DAA00695C06 /* LaunchScreen.storyboard */,
-				4CF6033E234C6DAA00695C06 /* Info.plist */,
-				4CF6033F234C6DAA00695C06 /* main.m */,
-				72C56317750B502F51ED3FE0 /* CustomSafeAreaView.m */,
-				72C562535A0225BA3794D1AB /* CustomSafeAreaView.h */,
-				4CE435302363324C006D5E97 /* Customs */,
-				72C56158A7C27779474B2184 /* Extensions */,
-				72C56A2A954BEC6E46FB78DC /* Todo */,
+				4C0F95D2236AE048001B029D /* App */,
 				72C56800BC59CB5A479347CB /* Shared */,
-				72C569DDCF61A5981F50E13E /* LAuth */,
+				4C0F95CF236ADEE0001B029D /* Classes */,
+				4C0F95D0236ADEF0001B029D /* Resources */,
+				4CF6033E234C6DAA00695C06 /* Info.plist */,
 			);
 			path = AutoLayout;
 			sourceTree = "<group>";
@@ -259,7 +292,6 @@
 				72C567D3B052949F4B2D7E8C /* UIViewController+Extension.m */,
 				72C56D396AAF873C3AEC87C3 /* UITableViewCell+Extension.m */,
 				72C565D3C21A45DF6BBEAAB6 /* UITableViewCell+Extension.h */,
-				72C565FD72589F2930FF1821 /* Functions.h */,
 				72C5612DF35B31F134C1EF79 /* NSObject+Extension.m */,
 				72C56F6AF3A722ADEE926DF7 /* NSObject+Extension.h */,
 				72C56F7D90F867510035466D /* NSOperationQueue+CWSharedQueue.h */,
@@ -268,6 +300,8 @@
 				4CE4352B2362EFE2006D5E97 /* UITableView+Extension.m */,
 				4CE4352D236319B5006D5E97 /* UIButton+Extension.h */,
 				4CE4352E236319B5006D5E97 /* UIButton+Extension.m */,
+				4C4E5D87236893650096AC3C /* UILabel+Utility.h */,
+				4C4E5D88236893650096AC3C /* UILabel+Utility.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -275,6 +309,9 @@
 		72C56800BC59CB5A479347CB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4C0F95D1236ADF2C001B029D /* Utils */,
+				72C56158A7C27779474B2184 /* Extensions */,
+				4CE435302363324C006D5E97 /* Customs */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -534,7 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF60335234C6DA800695C06 /* ViewController.m in Sources */,
+				4CF60335234C6DA800695C06 /* TodoViewController.m in Sources */,
 				4CF60340234C6DAA00695C06 /* main.m in Sources */,
 				4CF60332234C6DA800695C06 /* AppDelegate.m in Sources */,
 				4C3017952354B63D00AE7F61 /* TodoCell.m in Sources */,
@@ -548,6 +585,7 @@
 				4CE435332363326F006D5E97 /* TRButton.m in Sources */,
 				72C56F461AF2E05A237F11BB /* LATableViewCell.m in Sources */,
 				72C5614678ACB49940E41A8D /* LAViewController.m in Sources */,
+				4C4E5D89236893650096AC3C /* UILabel+Utility.m in Sources */,
 				72C56FB1D212C0D2F4E92824 /* LAContext+Extension.m in Sources */,
 				72C56556BEBFCC84BB188815 /* UIApplication+Extension.m in Sources */,
 				72C565100C27C0C9E0D75329 /* UIViewController+Extension.m in Sources */,

@@ -28,7 +28,6 @@
         UIView *container = [[UIView alloc] init:self.contentView color:UIColor.clearColor];
         [container pinToSuperviewEdges:JRTViewPinAllEdges inset:16.0];
         self.backgroundColor = UIColor.whiteColor;
-        isLoading = true;
         titleLabel = [[UILabel alloc] init:container color:UIColor.clearColor];
         titleLabel.font = [UIFont boldSystemFontOfSize:20];
         titleLabel.numberOfLines = 1;
@@ -51,17 +50,15 @@
         [button addConstraints:@[[button constrainToHeight:50]]];
         [button pinToSuperviewEdges:JRTViewPinBottomEdge | JRTViewPinLeftEdge | JRTViewPinRightEdge inset:0.0];
         [button pinAttribute:NSLayoutAttributeTop toAttribute:NSLayoutAttributeBottom ofItem:descriptionLabel withConstant:10];
-        [button addTarget:self action:@selector(onPress:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(onPress:) forControlEvents:UIControlEventAllEvents];
     }
     return self;
 }
 
 - (void)onPress:(id)sender {
-    NSLog(@"Pressed %@", sender);
-    button.isLoading = isLoading = !isLoading;
-}
-
-- (void)log {
+    if ([self.delegate respondsToSelector:@selector(onClick:)]) {
+        [self.delegate performSelector:@selector(onClick:) withObject:self];
+    }
 }
 
 - (void)setTitleText:(NSString *)titleText {

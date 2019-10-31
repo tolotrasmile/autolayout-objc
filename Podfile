@@ -7,6 +7,7 @@ target 'AutoLayout' do
 
   # Pods for AutoLayout
   pod 'FontAwesomeKit', '~> 2.2.0'
+  pod 'Masonry'
 
   target 'AutoLayoutTests' do
     inherit! :search_paths
