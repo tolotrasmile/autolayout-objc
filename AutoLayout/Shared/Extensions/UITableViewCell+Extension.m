@@ -8,32 +8,36 @@
 @implementation UITableViewCell (Extension)
 
 - (instancetype)init:(NSString *)reuseIdentifier selectionColor:(UIColor *)selectionColor resetEdges:(BOOL)resetEdges {
-    if ([self initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
-        if (resetEdges) {
-            if ([self respondsToSelector:@selector(setSeparatorInset:)]) {
-                [self setSeparatorInset:UIEdgeInsetsZero];
-            }
+  if ([self initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
+    if (resetEdges) {
+      if ([self respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self setSeparatorInset:UIEdgeInsetsZero];
+      }
 
-            if ([self respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
-                [self setPreservesSuperviewLayoutMargins:NO];
-            }
+      if ([self respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
+        [self setPreservesSuperviewLayoutMargins:NO];
+      }
 
-            if ([self respondsToSelector:@selector(setLayoutMargins:)]) {
-                [self setLayoutMargins:UIEdgeInsetsZero];
-            }
-        }
-
-        [self setSelectionStyle:UITableViewCellSelectionStyleDefault];
-
-        UIView *bgColorView = UIView.alloc.init;
-        bgColorView.backgroundColor = selectionColor;
-        self.selectedBackgroundView = bgColorView;
+      if ([self respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self setLayoutMargins:UIEdgeInsetsZero];
+      }
     }
-    return self;
+
+    [self setSelectionStyle:UITableViewCellSelectionStyleDefault];
+
+    UIView *bgColorView = UIView.alloc.init;
+    bgColorView.backgroundColor = selectionColor;
+    self.selectedBackgroundView = bgColorView;
+  }
+  return self;
 }
 
 - (instancetype)init:(NSString *)reuseIdentifier selectionColor:(UIColor *)selectionColor {
-    return [self init:reuseIdentifier selectionColor:selectionColor resetEdges:TRUE];
+  return [self init:reuseIdentifier selectionColor:selectionColor resetEdges:TRUE];
+}
+
+- (instancetype)init:(NSString *)reuseIdentifier {
+  return [self init:reuseIdentifier selectionColor:UIColor.whiteColor resetEdges:TRUE];
 }
 
 @end

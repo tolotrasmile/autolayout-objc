@@ -11,17 +11,17 @@
 @implementation UIButton (Extension)
 
 + (instancetype)initWithTitle:(nullable NSString *)title backgroundColor:(UIColor *)backgroundColor {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:backgroundColor forState:UIControlStateNormal];
+  UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+  [button setTitle:title forState:UIControlStateNormal];
+  [button setTitleColor:backgroundColor forState:UIControlStateNormal];
 
-    button.backgroundColor = UIColor.clearColor;
-    button.translatesAutoresizingMaskIntoConstraints = NO;
-    button.layer.borderColor = backgroundColor.CGColor;
-    button.layer.borderWidth = 2.0f;
-    button.layer.cornerRadius = 10.0f;
+  button.backgroundColor = UIColor.clearColor;
+  button.translatesAutoresizingMaskIntoConstraints = NO;
+  button.layer.borderColor = backgroundColor.CGColor;
+  button.layer.borderWidth = 2.0f;
+  button.layer.cornerRadius = 10.0f;
 
-    return button;
+  return button;
 }
 
 @end

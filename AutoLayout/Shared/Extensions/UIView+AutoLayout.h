@@ -9,20 +9,20 @@
  *  Options for pinning item edges.
  */
 typedef NS_OPTIONS(NSUInteger, JRTViewPinEdges) {
-    /// Pins the top edge of an item.
-            JRTViewPinTopEdge = 1 << 0,
+  /// Pins the top edge of an item.
+      JRTViewPinTopEdge = 1 << 0,
 
-    /// Pins the right edge of an item.
-            JRTViewPinRightEdge = 1 << 1,
+  /// Pins the right edge of an item.
+      JRTViewPinRightEdge = 1 << 1,
 
-    /// Pins the bottom edge of an item.
-            JRTViewPinBottomEdge = 1 << 2,
+  /// Pins the bottom edge of an item.
+      JRTViewPinBottomEdge = 1 << 2,
 
-    /// Pins the left edge of an item.
-            JRTViewPinLeftEdge = 1 << 3,
+  /// Pins the left edge of an item.
+      JRTViewPinLeftEdge = 1 << 3,
 
-    /// Pins all edges of an item.
-            JRTViewPinAllEdges = ~0UL
+  /// Pins all edges of an item.
+      JRTViewPinAllEdges = ~0UL
 };
 
 /** This AutoLayout category provides convenience methods to make writing AutoLayout code less verbose than directly using the `NSLayoutConstraint` methods.

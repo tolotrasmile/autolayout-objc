@@ -11,9 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, BiometryType) {
-    BiometryTypeNone,
-    BiometryTypeTouchID,
-    BiometryTypeFaceID,
+  BiometryTypeNone,
+  BiometryTypeTouchID,
+  BiometryTypeFaceID,
 };
 
 @interface LAContext (Extension)

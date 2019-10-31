@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init:(NSString *)reuseIdentifier selectionColor:(UIColor *)selectionColor;
 
+- (instancetype)init:(NSString *)reuseIdentifier;
+
 @end
 
 NS_ASSUME_NONNULL_END
