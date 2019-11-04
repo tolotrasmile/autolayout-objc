@@ -5,9 +5,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class SettingsCell;
-
-
 @interface SettingsRow : NSObject
 
 @property(strong, nonatomic) NSString *key;
@@ -17,7 +14,7 @@
 // Activate/deactivate setting (Switch value)
 @property(nonatomic) BOOL active;
 
-// Hide setting item from settings list
+// Hide setting item from defaultSettings list
 @property(nonatomic) BOOL visible;
 
 // Enable/disable setting
@@ -31,8 +28,5 @@
              visible:(BOOL)visible;
 
 + (id)getSettingsRows;
-
-- (void)updateViewModel:(SettingsCell *)viewModel atIndexPath:(NSIndexPath *)indexPath;
-
 
 @end

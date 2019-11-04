@@ -10,6 +10,7 @@
 #import "UITableViewCell+Extension.h"
 #import "UIView+Extension.h"
 #import "UIView+AutoLayout.h"
+#import "SettingsRow.h"
 
 @implementation SettingsCell
 
@@ -72,5 +73,17 @@
 - (void)setActive:(BOOL)active {
   self.button.selectedSegmentIndex = active ? 0 : 1;
 }
+
+- (void)update:(SettingsRow *)row atIndexPath:(NSIndexPath *)indexPath {
+  if (row) {
+    self.titleLabel.text = row.title;
+    self.descriptionLabel.text = row.subtitle;
+    self.button.selectedSegmentIndex = row.active ? 0 : 1;
+    self.accessible = row.accessible;
+    self.key = row.key;
+    self.indexPath = indexPath;
+  }
+}
+
 
 @end

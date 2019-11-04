@@ -51,7 +51,7 @@
 #define rgb(r, g, b)                        [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 #define rgba(r, g, b, a)                    [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define hex(c)                              [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:(c&0xFF)/255.0 alpha:1.0]
-#define addNotification(n, s)                [[NSNotificationCenter defaultCenter] addObserver:self selector:s name:n object:nil]
+#define addNotification(n, s)               [[NSNotificationCenter defaultCenter] addObserver:self selector:s name:n object:nil]
 #define removeNotification(n)               [NSNotificationCenter.defaultCenter removeObserver:self name:n object:nil];
 
 #endif

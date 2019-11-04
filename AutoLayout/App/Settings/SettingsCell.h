@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Colors.h"
 
+@class SettingsRow;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol SettingsCellDelegate <NSObject>
@@ -29,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setAccessible:(BOOL)accessible;
 
 - (void)setActive:(BOOL)active;
+
+- (void)update:(SettingsRow *)row atIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

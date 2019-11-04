@@ -4,7 +4,6 @@
 //
 
 #import "SettingsRow.h"
-#import "SettingsCell.h"
 
 @implementation SettingsRow
 
@@ -26,6 +25,10 @@
   return self;
 }
 
+- (instancetype)init:(NSString *)key titleKey:(NSString *)titleKey description:(NSString *)descriptionKey {
+  return [self init:key title:titleKey description:descriptionKey active:true accessible:true visible:true];
+}
+
 + getSettingsRows {
   return @[
       [[SettingsRow alloc] init:@"security" titleKey:@"settings_security_number" description:@"settings_save"],
@@ -33,20 +36,5 @@
       [[SettingsRow alloc] init:@"gluten" titleKey:@"settings_gluten" description:@"settings_enable_service"],
   ];
 };
-
-- (instancetype)init:(NSString *)key titleKey:(NSString *)titleKey description:(NSString *)descriptionKey {
-  return [self init:key title:titleKey description:descriptionKey active:true accessible:true visible:true];
-}
-
-- (void)updateViewModel:(SettingsCell *)viewModel atIndexPath:(NSIndexPath *)indexPath {
-  if (viewModel) {
-    viewModel.titleLabel.text = self.title;
-    viewModel.descriptionLabel.text = self.subtitle;
-    viewModel.button.selectedSegmentIndex = self.active ? 0 : 1;
-    viewModel.accessible = self.accessible;
-    viewModel.key = self.key;
-    viewModel.indexPath = indexPath;
-  }
-}
 
 @end

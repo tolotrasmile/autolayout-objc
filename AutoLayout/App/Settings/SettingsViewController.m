@@ -16,8 +16,10 @@
 @end
 
 @implementation SettingsViewController {
-  NSArray *settings;
+  NSMutableArray *settings;
 }
+
+#pragma mark - UIViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -28,39 +30,22 @@
   self.tableView.rowHeight = UITableViewAutomaticDimension;
   [self.tableView reloadData];
   self.clearsSelectionOnViewWillAppear = NO;
-  [self reloadSettings];
+  [self reloadDefaultSettings];
   addNotification(UIApplicationWillEnterForegroundNotification, @selector(didActive:));
 }
 
-- (void)didActive:(id)sender {
-  [self reloadSettings];
+- (void)dealloc {
+  removeNotification(UIApplicationWillEnterForegroundNotification);
 }
 
-- (void)reloadSettings {
-  settings = [SettingsRow getSettingsRows];
+- (void)didActive:(id)sender {
   [self.tableView reloadData];
 }
 
-#pragma mark - Table view data source
+#pragma mark - UITableView datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [self activeSettings].count;
-}
-
-- (NSArray *)activeSettings {
-  NSMutableArray *activeSettings = [NSMutableArray array];
-  for (SettingsRow *o in settings) {
-    if (o.visible) {
-      [activeSettings addObject:o];
-    }
-  }
-  return activeSettings;
-}
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  [tableView deselectRowAtIndexPath:indexPath animated:false];
+  return settings.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -69,17 +54,57 @@
     cell = [[SettingsCell alloc] init:@"SettingsCell" horizontal:30 vertical:15];
     cell.delegate = self;
   }
-  SettingsRow *currentRow = self.activeSettings[(NSUInteger) indexPath.row];
-  [currentRow updateViewModel:cell atIndexPath:indexPath];
+  [cell update:settings[(NSUInteger) indexPath.row] atIndexPath:indexPath];
   return cell;
 }
 
-- (void)didChangeState:(BOOL)newState key:(NSString *)key indexPath:(NSIndexPath *)indexPath {
-  Log(@"key %@ newState: %d", key, newState);
+#pragma mark - UITableView delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [tableView deselectRowAtIndexPath:indexPath animated:false];
 }
 
-- (void)dealloc {
-  removeNotification(UIApplicationWillEnterForegroundNotification);
+#pragma mark SettingsCellDelegate
+
+- (void)didChangeState:(BOOL)newState key:(NSString *)key indexPath:(NSIndexPath *)indexPath {
+  Log(@"key %@ newState: %d", key, newState);
+  [self toggleVisibility:FALSE atIndexPath:[NSIndexPath indexPathForRow:[self findIndex:key] inSection:0]];
+}
+
+#pragma mark - Settings
+
+- (void)reloadDefaultSettings {
+  settings = [NSMutableArray array];
+  [settings addObjectsFromArray:[SettingsRow getSettingsRows]];
+  [self.tableView reloadData];
+}
+
+- (NSInteger)findIndex:(NSString *)key {
+  for (NSUInteger i = 0; i < settings.count; ++i) {
+    SettingsRow *row = settings[i];
+    if (row.key == key) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+- (void)toggleVisibility:(BOOL)isVisible atIndexPath:(NSIndexPath *)indexPath {
+  [self deleteItemAtIndexPath:indexPath];
+}
+
+- (void)deleteItemAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.row > -1) {
+    [settings removeObjectAtIndex:(NSUInteger) indexPath.row];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+  }
+}
+
+- (void)insertItemAtIndexPath:(SettingsRow *)item atIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.row > -1) {
+    [settings insertObject:item atIndex:(NSUInteger) indexPath.row];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+  }
 }
 
 @end
