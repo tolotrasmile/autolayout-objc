@@ -9,7 +9,6 @@
 #import "SettingsViewController.h"
 #import "Macros.h"
 #import "SettingsRow.h"
-#import "Functions.h"
 
 @interface SettingsViewController ()
 
@@ -74,9 +73,8 @@
 
 #pragma mark SettingsCellDelegate
 
-- (void)didChangeState:(BOOL)newState key:(NSString *)key indexPath:(NSIndexPath *)indexPath {
-  Log(@"key %@ newState: %d", key, newState);
-  [self toggleVisibility:FALSE atIndexPath:[NSIndexPath indexPathForRow:[self findIndex:key] inSection:0]];
+- (void)didChangeState:(BOOL)newState item:(SettingsRow *)item indexPath:(NSIndexPath *)indexPath {
+  [self toggleVisibility:FALSE atIndexPath:[NSIndexPath indexPathForRow:[self findIndex:item] inSection:0]];
 }
 
 #pragma mark - Settings
@@ -87,10 +85,10 @@
   [self.tableView reloadData];
 }
 
-- (NSInteger)findIndex:(NSString *)key {
+- (NSInteger)findIndex:(SettingsRow *)item {
   for (NSUInteger i = 0; i < settings.count; ++i) {
     SettingsRow *row = settings[i];
-    if (row.key == key) {
+    if (row == item) {
       return i;
     }
   }

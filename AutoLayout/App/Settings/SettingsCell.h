@@ -14,7 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol SettingsCellDelegate <NSObject>
-- (void)didChangeState:(BOOL)newState key:(NSString *)key indexPath:(NSIndexPath *)indexPath;
+- (void)didChangeState:(BOOL)newState item:(SettingsRow *)item indexPath:(NSIndexPath *)indexPath;
 @end
 
 @interface SettingsCell : UITableViewCell
@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, nonnull) id <SettingsCellDelegate> delegate;
 @property(nonatomic, nonnull) NSIndexPath *indexPath;
 @property(nonatomic, nonnull) NSString *key;
+@property(nonatomic, nonnull) SettingsRow *item;
 
 - (id)init:(NSString *)reuseIdentifier horizontal:(CGFloat)horizontal vertical:(CGFloat)vertical;
 

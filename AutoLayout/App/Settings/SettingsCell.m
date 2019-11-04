@@ -57,8 +57,8 @@
 }
 
 - (void)selectionDidChange:(UISegmentedControl *)sender {
-  if (self.delegate && [self.delegate respondsToSelector:@selector(didChangeState:key:indexPath:)]) {
-    [[self delegate] didChangeState:(BOOL) sender.selectedSegmentIndex key:self.key indexPath:self.indexPath];
+  if (self.delegate && [self.delegate respondsToSelector:@selector(didChangeState:item:indexPath:)]) {
+    [[self delegate] didChangeState:(BOOL) sender.selectedSegmentIndex item:self.item indexPath:self.indexPath];
   }
 }
 
@@ -76,6 +76,7 @@
 
 - (void)update:(SettingsRow *)row atIndexPath:(NSIndexPath *)indexPath {
   if (row) {
+    self.item = row;
     self.titleLabel.text = row.title;
     self.descriptionLabel.text = row.subtitle;
     self.button.selectedSegmentIndex = row.active ? 0 : 1;
