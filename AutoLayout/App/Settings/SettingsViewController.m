@@ -10,6 +10,8 @@
 #import "Macros.h"
 #import "SettingsRow.h"
 
+static const UITableViewRowAnimation rowAnimation = UITableViewRowAnimationAutomatic;
+
 @interface SettingsViewController ()
 
 @end
@@ -32,11 +34,11 @@
   [self reloadDefaultSettings];
   addNotification(UIApplicationWillEnterForegroundNotification, @selector(didActive:));
 
-  UIBarButtonItem *plus = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
+  UIBarButtonItem *plus = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addRow)];
   self.navigationItem.rightBarButtonItem = plus;
 }
 
-- (void)add {
+- (void)addRow {
   SettingsRow *row = [[SettingsRow alloc] init:@"security" titleKey:@"settings_security_number" description:@"settings_save"];
   [self insertItem:row atIndexPath:[NSIndexPath indexPathForRow:MAX(0, settings.count) inSection:0]];
 }
@@ -73,8 +75,7 @@
 
 #pragma mark SettingsCellDelegate
 
-- (void)didChangeState:(BOOL)newState item:(SettingsRow *)item indexPath:(NSIndexPath *)indexPath {
-  [self toggleVisibility:FALSE atIndexPath:[NSIndexPath indexPathForRow:[self findIndex:item] inSection:0]];
+- (void)didToggle:(BOOL)newState item:(SettingsRow *)item indexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark - Settings
@@ -95,22 +96,33 @@
   return -1;
 }
 
-- (void)toggleVisibility:(BOOL)isVisible atIndexPath:(NSIndexPath *)indexPath {
-  [self deleteItemAtIndexPath:indexPath];
+- (SettingsRow *)itemAtIndexPath:(NSIndexPath *)indexPath {
+  return settings[(NSUInteger) indexPath.row];
+}
+
+- (void)setVisibility:(BOOL)isVisible atIndexPath:(NSIndexPath *)indexPath {
+  [self itemAtIndexPath:indexPath].visible = isVisible;
+  [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
+}
+
+- (void)setAccessible:(BOOL)isAccessible atIndexPath:(NSIndexPath *)indexPath {
+  [self itemAtIndexPath:indexPath].accessible = isAccessible;
+  [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
+}
+
+- (void)setEnabled:(BOOL)isEnabled atIndexPath:(NSIndexPath *)indexPath {
+  [self itemAtIndexPath:indexPath].active = isEnabled;
+  [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
 }
 
 - (void)deleteItemAtIndexPath:(NSIndexPath *)indexPath {
-  if (indexPath.row > -1) {
-    [settings removeObjectAtIndex:(NSUInteger) indexPath.row];
-    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-  }
+  [settings removeObjectAtIndex:(NSUInteger) indexPath.row];
+  [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
 }
 
 - (void)insertItem:(SettingsRow *)item atIndexPath:(NSIndexPath *)indexPath {
-  if (indexPath.row > -1) {
-    [settings insertObject:item atIndex:(NSUInteger) indexPath.row];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-  }
+  [settings insertObject:item atIndex:(NSUInteger) indexPath.row];
+  [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
 }
 
 @end

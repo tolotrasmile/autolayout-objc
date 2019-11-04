@@ -57,8 +57,8 @@
 }
 
 - (void)selectionDidChange:(UISegmentedControl *)sender {
-  if (self.delegate && [self.delegate respondsToSelector:@selector(didChangeState:item:indexPath:)]) {
-    [[self delegate] didChangeState:(BOOL) sender.selectedSegmentIndex item:self.item indexPath:self.indexPath];
+  if (self.delegate && [self.delegate respondsToSelector:@selector(didToggle:item:indexPath:)]) {
+    [[self delegate] didToggle:(BOOL) sender.selectedSegmentIndex item:self.item indexPath:self.indexPath];
   }
 }
 
@@ -82,6 +82,7 @@
     self.button.selectedSegmentIndex = row.active ? 0 : 1;
     self.accessible = row.accessible;
     self.key = row.key;
+    self.active = row.active;
     self.indexPath = indexPath;
   }
 }

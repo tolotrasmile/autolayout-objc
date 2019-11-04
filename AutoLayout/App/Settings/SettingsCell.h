@@ -14,7 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol SettingsCellDelegate <NSObject>
-- (void)didChangeState:(BOOL)newState item:(SettingsRow *)item indexPath:(NSIndexPath *)indexPath;
+- (void)didToggle:(BOOL)newState item:(SettingsRow *)item indexPath:(NSIndexPath *)indexPath;
 @end
 
 @interface SettingsCell : UITableViewCell
