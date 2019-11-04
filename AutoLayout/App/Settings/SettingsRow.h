@@ -27,6 +27,8 @@
           accessible:(BOOL)accessible
              visible:(BOOL)visible;
 
+- (instancetype)init:(NSString *)key titleKey:(NSString *)titleKey description:(NSString *)descriptionKey;
+
 + (id)getSettingsRows;
 
 @end

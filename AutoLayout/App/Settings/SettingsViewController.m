@@ -32,6 +32,14 @@
   self.clearsSelectionOnViewWillAppear = NO;
   [self reloadDefaultSettings];
   addNotification(UIApplicationWillEnterForegroundNotification, @selector(didActive:));
+
+  UIBarButtonItem *plus = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
+  self.navigationItem.rightBarButtonItem = plus;
+}
+
+- (void)add {
+  SettingsRow *row = [[SettingsRow alloc] init:@"security" titleKey:@"settings_security_number" description:@"settings_save"];
+  [self insertItem:row atIndexPath:[NSIndexPath indexPathForRow:MAX(0, settings.count) inSection:0]];
 }
 
 - (void)dealloc {
@@ -100,10 +108,10 @@
   }
 }
 
-- (void)insertItemAtIndexPath:(SettingsRow *)item atIndexPath:(NSIndexPath *)indexPath {
+- (void)insertItem:(SettingsRow *)item atIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.row > -1) {
     [settings insertObject:item atIndex:(NSUInteger) indexPath.row];
-    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
   }
 }
 
