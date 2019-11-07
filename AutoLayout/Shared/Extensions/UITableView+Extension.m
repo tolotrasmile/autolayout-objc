@@ -30,4 +30,10 @@
   return self;
 }
 
+- (void)reloadDataAnimated:(UITableViewRowAnimation)animation {
+  NSUInteger sectionsCount = (NSUInteger) MAX(self.numberOfSections, 1);
+  NSIndexSet *section = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, sectionsCount)];
+  [self reloadSections:section withRowAnimation:animation];
+}
+
 @end

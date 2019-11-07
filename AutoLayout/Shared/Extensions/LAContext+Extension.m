@@ -10,9 +10,9 @@
 
 @implementation LAContext (Extension)
 
-- (void)getPermission:(LAPolicy)policy
-               reason:(NSString *)reason
-                reply:(void (^)(BOOL success, NSError *__nullable error, NSInteger code))reply {
+- (void)canUseBiometrics:(LAPolicy)policy
+                  reason:(NSString *)reason
+                   reply:(void (^)(BOOL success, NSError *__nullable error, NSInteger code))reply {
   [self getLAType:policy reply:^(BOOL type, NSError *e) {
     if (type != BiometryTypeNone) {
       [self evaluatePolicy:policy
@@ -31,6 +31,14 @@
       reply(false, e, e.code);
     }
   }];
+}
+
+- (BOOL)canUseBiometrics:(LAPolicy)policy {
+  NSError *e = nil;
+  if (![self canEvaluatePolicy:policy error:&e]) {
+    return false;
+  }
+  return e ? false : true;
 }
 
 - (void)getLAType:(LAPolicy)policy reply:(void (^)(BOOL BiometryType, NSError *__nullable error))reply {

@@ -93,7 +93,7 @@
 - (void)onClick:(NSObject *)sender {
   LAContext *context = [LAContext new];
   context.localizedFallbackTitle = @"";
-  [context getPermission:LAPolicyDeviceOwnerAuthenticationWithBiometrics reason:@"Get LA Code" reply:^(BOOL success, NSError *error, NSInteger code) {
+  [context canUseBiometrics:LAPolicyDeviceOwnerAuthenticationWithBiometrics reason:@"Get LA Code" reply:^(BOOL success, NSError *error, NSInteger code) {
     if (!success) {
       if (code == kLAErrorBiometryNotEnrolled) {
         [UIApplication.sharedApplication openURLString:@"App-prefs:root=General"];

@@ -26,7 +26,7 @@
 }
 
 - (instancetype)init:(NSString *)key titleKey:(NSString *)titleKey description:(NSString *)descriptionKey {
-  return [self init:key title:titleKey description:descriptionKey active:true accessible:true visible:true];
+  return [self init:key title:titleKey description:descriptionKey active:false accessible:true visible:true];
 }
 
 + getSettingsRows {

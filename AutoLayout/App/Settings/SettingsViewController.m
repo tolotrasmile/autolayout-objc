@@ -9,6 +9,8 @@
 #import "SettingsViewController.h"
 #import "Macros.h"
 #import "SettingsRow.h"
+#import "UITableView+Extension.h"
+#import "UIViewController+Extension.h"
 
 static const UITableViewRowAnimation rowAnimation = UITableViewRowAnimationAutomatic;
 
@@ -35,7 +37,12 @@ static const UITableViewRowAnimation rowAnimation = UITableViewRowAnimationAutom
   addNotification(UIApplicationWillEnterForegroundNotification, @selector(didActive:));
 
   UIBarButtonItem *plus = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addRow)];
-  self.navigationItem.rightBarButtonItem = plus;
+  UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)];
+  self.navigationItem.rightBarButtonItems = @[plus, refresh];
+}
+
+- (void)refresh {
+  [self.tableView reloadDataAnimated:UITableViewRowAnimationAutomatic];
 }
 
 - (void)addRow {
@@ -57,6 +64,10 @@ static const UITableViewRowAnimation rowAnimation = UITableViewRowAnimationAutom
   return settings.count;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+  return nil;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   SettingsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingsCell"];
   if (cell == nil) {
@@ -76,6 +87,9 @@ static const UITableViewRowAnimation rowAnimation = UITableViewRowAnimationAutom
 #pragma mark SettingsCellDelegate
 
 - (void)didToggle:(BOOL)newState item:(SettingsRow *)item indexPath:(NSIndexPath *)indexPath {
+  [self showAlert:@"SUCCESS" message:@"Index changed" handler:^(UIAlertAction *action) {
+
+  }];
 }
 
 #pragma mark - Settings
@@ -83,7 +97,7 @@ static const UITableViewRowAnimation rowAnimation = UITableViewRowAnimationAutom
 - (void)reloadDefaultSettings {
   settings = [NSMutableArray array];
   [settings addObjectsFromArray:[SettingsRow getSettingsRows]];
-  [self.tableView reloadData];
+  [self.tableView reloadDataAnimated:UITableViewRowAnimationAutomatic];
 }
 
 - (NSInteger)findIndex:(SettingsRow *)item {

@@ -15,7 +15,7 @@
   UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
   UIAlertAction *close = [UIAlertAction actionWithTitle:@"Fermer" style:UIAlertActionStyleCancel handler:handler];
   [alert addAction:close];
-  [self presentViewController:alert animated:true completion:nil];
+  [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:true completion:nil];
 }
 
 - (void)addSubview:(UIView *)view top:(double)top left:(double)left bottom:(double)bottom right:(double)right {

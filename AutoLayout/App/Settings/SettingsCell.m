@@ -11,6 +11,8 @@
 #import "UIView+Extension.h"
 #import "UIView+AutoLayout.h"
 #import "SettingsRow.h"
+#import "LAContext+Extension.h"
+#import "Functions.h"
 
 @implementation SettingsCell
 
@@ -58,7 +60,16 @@
 
 - (void)selectionDidChange:(UISegmentedControl *)sender {
   if (self.delegate && [self.delegate respondsToSelector:@selector(didToggle:item:indexPath:)]) {
-    [[self delegate] didToggle:(BOOL) sender.selectedSegmentIndex item:self.item indexPath:self.indexPath];
+    LAContext *context = [LAContext new];
+    [context canUseBiometrics:LAPolicyDeviceOwnerAuthenticationWithBiometrics reason:@"Get Atuh" reply:^(BOOL success, NSError *error, NSInteger code) {
+      if (!error) {
+        [self setActive:true];
+        [[self delegate] didToggle:(BOOL) sender.selectedSegmentIndex item:self.item indexPath:self.indexPath];
+      } else {
+        [self setActive:false];
+        Log(@"Error %@", error);
+      }
+    }];
   }
 }
 

@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithStyle:(UITableViewStyle)style estimatedRowHeight:(CGFloat)estimatedRowHeight withParent:(UIViewController <UITableViewDataSource, UITableViewDelegate> *)parent;
 
+- (void)reloadDataAnimated:(UITableViewRowAnimation)animation;
+
 @end
 
 NS_ASSUME_NONNULL_END

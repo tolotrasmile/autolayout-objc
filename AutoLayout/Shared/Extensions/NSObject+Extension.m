@@ -18,4 +18,16 @@
   return sharedInstance;
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
+- (id)performSelector:(SEL)sel with:(id)object {
+  if ([self respondsToSelector:sel]) {
+    return [self performSelector:sel withObject:object];
+  }
+  return nil;
+}
+
+#pragma clang diagnostic pop
+
 @end

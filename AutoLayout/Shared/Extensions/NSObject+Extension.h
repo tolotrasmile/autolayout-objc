@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
+- (id)performSelector:(SEL)sel with:(id)object;
+
 @end
 
 NS_ASSUME_NONNULL_END

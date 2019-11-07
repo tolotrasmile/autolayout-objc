@@ -17,10 +17,19 @@ typedef NS_ENUM(NSInteger, BiometryType) {
 };
 
 @interface LAContext (Extension)
-
-- (void)getPermission:(LAPolicy)policy
+/**
+ * Get
+ * @param policy
+ * @param reason
+ * @param reply
+ */
+- (void)canUseBiometrics:(LAPolicy)policy
                reason:(NSString *)reason
                 reply:(void (^)(BOOL success, NSError *__nullable error, NSInteger code))reply;
+
+- (BOOL)canUseBiometrics:(LAPolicy)policy;
+
+- (void)getLAType:(LAPolicy)policy reply:(void (^)(BOOL BiometryType, NSError *__nullable error))reply;
 
 @end
 
