@@ -28,6 +28,7 @@
 		72C5627241B11199B8B52B87 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72C56C71396FB5D2AECE2AB6 /* Localizable.strings */; };
 		72C565100C27C0C9E0D75329 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C567D3B052949F4B2D7E8C /* UIViewController+Extension.m */; };
 		72C56525324DF56A1CDE6AD9 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56C921F7DEE8D51DFA1EA /* UIView+Extension.m */; };
+		72C5652853D36E4059B93B81 /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56A4BCA9BA055BF6D8CB3 /* Plist.m */; };
 		72C56556BEBFCC84BB188815 /* UIApplication+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56C92B7793C977A29882B /* UIApplication+Extension.m */; };
 		72C566A553720443168A7E67 /* UITableViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56D396AAF873C3AEC87C3 /* UITableViewCell+Extension.m */; };
 		72C56A2742FF65351AC29378 /* CustomSafeAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56317750B502F51ED3FE0 /* CustomSafeAreaView.m */; };
@@ -108,6 +109,7 @@
 		72C56317750B502F51ED3FE0 /* CustomSafeAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSafeAreaView.m; sourceTree = "<group>"; };
 		72C563263FE81600A1AF01ED /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		72C56344AE31CFDB07C10AED /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		72C563FB5253768615040782 /* Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plist.h; sourceTree = "<group>"; };
 		72C56480509F399E10D93142 /* SettingsRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsRow.m; sourceTree = "<group>"; };
 		72C5656B7C59A919DEC8F238 /* UIApplication+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Extension.h"; sourceTree = "<group>"; };
 		72C5656C9EA68C61B82C2529 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		72C5698279AE97406C805BE4 /* CAGradientLayer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAGradientLayer+Extension.h"; sourceTree = "<group>"; };
 		72C56A34CF38B1BDE7511E6D /* NSOperationQueue+CWSharedQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+CWSharedQueue.m"; sourceTree = "<group>"; };
 		72C56A3CADC3015D4FC3A5AA /* UIView+NSLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NSLayoutConstraint.h"; sourceTree = "<group>"; };
+		72C56A4BCA9BA055BF6D8CB3 /* Plist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plist.m; sourceTree = "<group>"; };
 		72C56B54ED8E2A6149C704DD /* TodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoViewController.m; sourceTree = "<group>"; };
 		72C56BF6DAD2B2962B79C6CF /* UIView+NSLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NSLayoutConstraint.m"; sourceTree = "<group>"; };
 		72C56C71396FB5D2AECE2AB6 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -333,12 +336,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		72C566E7949CF89FFA4C0C0D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				72C56A4BCA9BA055BF6D8CB3 /* Plist.m */,
+				72C563FB5253768615040782 /* Plist.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		72C56800BC59CB5A479347CB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				72C56158A7C27779474B2184 /* Extensions */,
 				4CE435302363324C006D5E97 /* Customs */,
 				72C56FDFD307395CE98C8413 /* Headers */,
+				72C566E7949CF89FFA4C0C0D /* Utils */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -639,6 +652,7 @@
 				72C56FD911AFD77651E00F21 /* NSOperationQueue+CWSharedQueue.m in Sources */,
 				72C56EC3948FE6771783F9C7 /* TodoViewController.m in Sources */,
 				72C56ECAD13F6B1DD30BFE31 /* SettingsRow.m in Sources */,
+				72C5652853D36E4059B93B81 /* Plist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

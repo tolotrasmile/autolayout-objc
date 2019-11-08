@@ -11,6 +11,7 @@
 #import "SettingsRow.h"
 #import "UITableView+Extension.h"
 #import "UIViewController+Extension.h"
+#import "Plist.h"
 
 static const UITableViewRowAnimation rowAnimation = UITableViewRowAnimationAutomatic;
 
@@ -39,6 +40,11 @@ static const UITableViewRowAnimation rowAnimation = UITableViewRowAnimationAutom
   UIBarButtonItem *plus = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addRow)];
   UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)];
   self.navigationItem.rightBarButtonItems = @[plus, refresh];
+
+  // @"Settings.bundle/Root"
+  Plist *plistManager = [[Plist alloc] init:@"Settings"];
+  NSLog(@"%@", plistManager.values);
+
 }
 
 - (void)refresh {
