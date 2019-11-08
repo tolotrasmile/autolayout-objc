@@ -111,6 +111,11 @@
   values[key] = value;
 }
 
+/**
+ * Test hooks
+ * @param key
+ * @return
+ */
 - (id)getItemForKey:(NSString *)key {
   return values[key];
 }
