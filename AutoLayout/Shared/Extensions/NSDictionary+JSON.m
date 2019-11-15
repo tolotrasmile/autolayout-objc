@@ -27,7 +27,7 @@
 }
 
 - (NSString *)toJSONString:(NSJSONWritingOptions)options {
-  return [self toJSONString:NSJSONWritingPrettyPrinted encoding:NSUTF8StringEncoding];
+  return [self toJSONString:options encoding:NSUTF8StringEncoding];
 }
 
 - (NSString *)toJSONString {
