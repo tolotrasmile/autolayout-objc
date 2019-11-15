@@ -4,8 +4,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONModel.h"
 
-@interface SettingsRow : NSObject
+@interface SettingsRow : JSONModel
 
 @property(strong, nonatomic) NSString *key;
 @property(strong, nonatomic) NSString *title;

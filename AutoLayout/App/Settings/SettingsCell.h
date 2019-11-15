@@ -14,7 +14,15 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol SettingsCellDelegate <NSObject>
+
+/**
+ * Notify if row switch value is changed
+ * @param newState
+ * @param item
+ * @param indexPath
+ */
 - (void)didToggle:(BOOL)newState item:(SettingsRow *)item indexPath:(NSIndexPath *)indexPath;
+
 @end
 
 @interface SettingsCell : UITableViewCell
@@ -29,10 +37,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (id)init:(NSString *)reuseIdentifier horizontal:(CGFloat)horizontal vertical:(CGFloat)vertical;
 
+/**
+ * Setter for accessibility for user interaction on row
+ * @param accessible
+ */
 - (void)setAccessible:(BOOL)accessible;
 
+/**
+ * Setter for switch value
+ * @param active
+ */
 - (void)setActive:(BOOL)active;
 
+/**
+ * Update row model
+ * @param row
+ * @param indexPath
+ */
 - (void)update:(SettingsRow *)row atIndexPath:(NSIndexPath *)indexPath;
 
 @end

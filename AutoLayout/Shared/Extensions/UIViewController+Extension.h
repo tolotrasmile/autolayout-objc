@@ -13,6 +13,15 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIViewController (Extension)
 
 /**
+ * Show alert with all parameters
+ * @param title
+ * @param message
+ * @param closeTitle
+ * @param handler
+ */
+- (void)showAlert:(nullable NSString *)title message:(nullable NSString *)message closeTitle:(NSString *)closeTitle handler:(void (^ __nullable)(UIAlertAction *action))handler;
+
+/**
  * Show alert with callback handler
  * @param title
  * @param message
@@ -21,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showAlert:(nullable NSString *)title message:(nullable NSString *)message handler:(void (^ __nullable)(UIAlertAction *action))handler;
 
 /**
- * Show alert without
+ * Show alert without callback handler
  * @param title
  * @param message
  * @param handler

@@ -10,11 +10,15 @@
 
 @implementation UIViewController (Extension)
 
-- (void)showAlert:(nullable NSString *)title message:(nullable NSString *)message handler:(void (^ __nullable)(UIAlertAction *action))handler {
+- (void)showAlert:(nullable NSString *)title message:(nullable NSString *)message closeTitle:(NSString *)closeTitle handler:(void (^ __nullable)(UIAlertAction *action))handler {
   UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-  UIAlertAction *close = [UIAlertAction actionWithTitle:@"Fermer" style:UIAlertActionStyleCancel handler:handler];
+  UIAlertAction *close = [UIAlertAction actionWithTitle:closeTitle style:UIAlertActionStyleCancel handler:handler];
   [alert addAction:close];
   [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:true completion:nil];
+}
+
+- (void)showAlert:(nullable NSString *)title message:(nullable NSString *)message handler:(void (^ __nullable)(UIAlertAction *action))handler {
+  [self showAlert:title message:message closeTitle:@"FERMER" handler:handler];
 }
 
 - (void)showAlert:(nullable NSString *)title message:(nullable NSString *)message {
