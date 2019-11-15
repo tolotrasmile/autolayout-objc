@@ -6,6 +6,7 @@ target 'AutoLayout' do
   # use_frameworks!
 
   # Pods for AutoLayout
+  pod 'JSONModel'
   pod 'FontAwesomeKit', '~> 2.2.0'
   pod 'Masonry'
 
