@@ -31,9 +31,11 @@
 		72C5652853D36E4059B93B81 /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56A4BCA9BA055BF6D8CB3 /* Plist.m */; };
 		72C56556BEBFCC84BB188815 /* UIApplication+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56C92B7793C977A29882B /* UIApplication+Extension.m */; };
 		72C566A553720443168A7E67 /* UITableViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56D396AAF873C3AEC87C3 /* UITableViewCell+Extension.m */; };
+		72C567B5E160902B20FCE753 /* TRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C564C93AF0C755F07622D3 /* TRWebViewController.m */; };
 		72C56A2742FF65351AC29378 /* CustomSafeAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56317750B502F51ED3FE0 /* CustomSafeAreaView.m */; };
 		72C56A7DEC6CF9FBA1858B16 /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C5612DF35B31F134C1EF79 /* NSObject+Extension.m */; };
 		72C56AE20F682EAF6FC9D542 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C567E65464F0D8998B0265 /* UIView+AutoLayout.m */; };
+		72C56C1664F8C559825C3C26 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56802ABD5C1BF3145EFF7 /* NSDictionary+JSON.m */; };
 		72C56C932A6BBBC448E2B762 /* CAGradientLayer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C560B8F5A28FDBCED1FC68 /* CAGradientLayer+Extension.m */; };
 		72C56EC3948FE6771783F9C7 /* TodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56B54ED8E2A6149C704DD /* TodoViewController.m */; };
 		72C56ECAD13F6B1DD30BFE31 /* SettingsRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56480509F399E10D93142 /* SettingsRow.m */; };
@@ -101,6 +103,7 @@
 		5233EE514132794635F11038 /* Pods-AutoLayoutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoLayoutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoLayoutUITests/Pods-AutoLayoutUITests.release.xcconfig"; sourceTree = "<group>"; };
 		68103D8EE35FAAEF99AB4F4C /* Pods-AutoLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoLayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoLayout/Pods-AutoLayout.debug.xcconfig"; sourceTree = "<group>"; };
 		72C560B8F5A28FDBCED1FC68 /* CAGradientLayer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAGradientLayer+Extension.m"; sourceTree = "<group>"; };
+		72C561049155AF002C96E732 /* TRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRWebViewController.h; sourceTree = "<group>"; };
 		72C5612DF35B31F134C1EF79 /* NSObject+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
 		72C562535A0225BA3794D1AB /* CustomSafeAreaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSafeAreaView.h; sourceTree = "<group>"; };
 		72C562677F05AAE3597267CD /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
@@ -111,13 +114,16 @@
 		72C56344AE31CFDB07C10AED /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		72C563FB5253768615040782 /* Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plist.h; sourceTree = "<group>"; };
 		72C56480509F399E10D93142 /* SettingsRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsRow.m; sourceTree = "<group>"; };
+		72C564C93AF0C755F07622D3 /* TRWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRWebViewController.m; sourceTree = "<group>"; };
 		72C5656B7C59A919DEC8F238 /* UIApplication+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Extension.h"; sourceTree = "<group>"; };
 		72C5656C9EA68C61B82C2529 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		72C565D3C21A45DF6BBEAAB6 /* UITableViewCell+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Extension.h"; sourceTree = "<group>"; };
+		72C5669A4F094352280E2477 /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
 		72C5671D80962F183C4D35D2 /* LAContext+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LAContext+Extension.m"; sourceTree = "<group>"; };
 		72C567A30B245481D794AAB3 /* LAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAViewController.m; sourceTree = "<group>"; };
 		72C567D3B052949F4B2D7E8C /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		72C567E65464F0D8998B0265 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		72C56802ABD5C1BF3145EFF7 /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSON.m"; sourceTree = "<group>"; };
 		72C5696A280BF065C92DFEB7 /* LAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAViewController.h; sourceTree = "<group>"; };
 		72C569789FD14A9042043D9D /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
 		72C5698279AE97406C805BE4 /* CAGradientLayer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAGradientLayer+Extension.h"; sourceTree = "<group>"; };
@@ -245,6 +251,8 @@
 				72C562535A0225BA3794D1AB /* CustomSafeAreaView.h */,
 				4CE435312363326E006D5E97 /* TRButton.h */,
 				4CE435322363326E006D5E97 /* TRButton.m */,
+				72C564C93AF0C755F07622D3 /* TRWebViewController.m */,
+				72C561049155AF002C96E732 /* TRWebViewController.h */,
 			);
 			path = Customs;
 			sourceTree = "<group>";
@@ -332,6 +340,8 @@
 				4CE4352E236319B5006D5E97 /* UIButton+Extension.m */,
 				4C4E5D87236893650096AC3C /* UILabel+Utility.h */,
 				4C4E5D88236893650096AC3C /* UILabel+Utility.m */,
+				72C56802ABD5C1BF3145EFF7 /* NSDictionary+JSON.m */,
+				72C5669A4F094352280E2477 /* NSDictionary+JSON.h */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -653,6 +663,8 @@
 				72C56EC3948FE6771783F9C7 /* TodoViewController.m in Sources */,
 				72C56ECAD13F6B1DD30BFE31 /* SettingsRow.m in Sources */,
 				72C5652853D36E4059B93B81 /* Plist.m in Sources */,
+				72C567B5E160902B20FCE753 /* TRWebViewController.m in Sources */,
+				72C56C1664F8C559825C3C26 /* NSDictionary+JSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
