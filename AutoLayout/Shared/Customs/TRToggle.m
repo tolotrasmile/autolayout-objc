@@ -54,9 +54,7 @@
 
 - (void)onChange:(UISegmentedControl *)sender {
   _value = [self getBoolFromIndex:(NSUInteger) sender.selectedSegmentIndex];
-  if ([self.delegate respondsToSelector:@selector(onToggle:value:)]) {
-    [self.delegate onToggle:self value:_value];
-  }
+  [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 #pragma mark Private methods

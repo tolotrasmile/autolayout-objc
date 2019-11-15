@@ -10,16 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol TRToggleDelegate <NSObject>
+@interface TRToggle : UIControl
 
-@optional
-- (void)onToggle:(TRToggle *)sender value:(BOOL)value;
-
-@end
-
-@interface TRToggle : UIView
-
-@property(nonatomic, nullable) id <TRToggleDelegate> delegate;
 @property(nonatomic, getter=getIsOn, setter=setIsOn:) BOOL isOn;
 @property(nonatomic, getter=getIsUpperCaseTitle, setter=setIsUpperCaseTitle:) BOOL isUpperCaseTitle;
 
