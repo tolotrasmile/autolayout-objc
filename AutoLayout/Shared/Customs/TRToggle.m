@@ -18,7 +18,7 @@
 
   if (self) {
     // Create control
-    _control = [[UISegmentedControl alloc] initWithItems:@[@"yes", @"Non"]];
+    _control = [[UISegmentedControl alloc] initWithItems:@[@"Yes", @"Non"]];
     [_control addTarget:self action:@selector(onChange:) forControlEvents:UIControlEventValueChanged];
     [self addSubview:_control];
     [self updateControlFrame];
@@ -124,12 +124,17 @@
  * @param title
  * @param isOn
  */
-- (void)setTitle:(NSString *)title forState:(BOOL)isOn {
-  NSUInteger index = [self getIndexFromBool:isOn];
+- (void)setTitle:(NSString *)title forState:(BOOL)state {
+  NSUInteger index = [self getIndexFromBool:state];
 
   // Check upper case value
   NSString *t = (title && _isUpperCaseTitle) ? [title uppercaseString] : title;
   [_control setTitle:t forSegmentAtIndex:index];
+}
+
+- (NSString *)getTitleForState:(BOOL)state {
+  NSUInteger index = [self getIndexFromBool:state];
+  return [_control titleForSegmentAtIndex:index];
 }
 
 /**

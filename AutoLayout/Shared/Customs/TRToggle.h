@@ -35,6 +35,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setTitle:(NSString *)title forState:(BOOL)isOn;
 
 /**
+ * Get title for state
+ * @param state
+ * @return
+ */
+- (NSString *)getTitleForState:(BOOL)state;
+
+/**
  * Set font for state
  * @param font
  * @param state
