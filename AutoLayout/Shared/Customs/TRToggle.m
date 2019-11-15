@@ -155,7 +155,8 @@
 }
 
 - (UIFont *)getFontForState:(UIControlState)state {
-  return [_control titleTextAttributesForState:state][NSFontAttributeName];
+  NSDictionary *attributes = [_control titleTextAttributesForState:state];
+  return attributes ? attributes[NSFontAttributeName] : nil;
 }
 
 @end
