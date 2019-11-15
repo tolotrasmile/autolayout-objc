@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setText:(nullable NSString *)text;
 
+- (void)setEnabled:(BOOL)isEnabled;
+
 - (void)setIsLoading:(BOOL)isLoading;
 
 @end

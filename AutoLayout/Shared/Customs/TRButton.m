@@ -61,6 +61,12 @@ const static CGFloat TRButtonAnimationDuration = 0.5f;
   [backgroundColor getRed:nil green:nil blue:nil alpha:&opacity];
 }
 
+- (void)setBackgroundColor:(UIColor *)backgroundColor opacity:(CGFloat)alpha {
+  CGFloat red, green, blue;
+  [backgroundColor getRed:&red green:&green blue:&blue alpha:nil];
+  [self setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:alpha]];
+}
+
 - (void)setText:(nullable NSString *)text {
   if (text != nil) {
     self.titleLabel.text = [text uppercaseString];
@@ -69,6 +75,16 @@ const static CGFloat TRButtonAnimationDuration = 0.5f;
 
 - (BOOL)isLoading {
   return loading;
+}
+
+- (void)setEnabled:(BOOL)isEnabled {
+  [super setEnabled:isEnabled];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [UIView animateWithDuration:TRButtonAnimationDuration animations:^{
+      CGFloat alpha = isEnabled ? 1 : opacity / 3;
+      [self setBackgroundColor:self.backgroundColor opacity:alpha];
+    }];
+  });
 }
 
 - (void)setIsLoading:(BOOL)isLoading {

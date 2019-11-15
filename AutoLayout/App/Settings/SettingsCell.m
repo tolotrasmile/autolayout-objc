@@ -60,7 +60,7 @@
 }
 
 - (void)selectionDidChange:(UISegmentedControl *)sender {
-  Log(@"%@", [[self.item toDictionary] toJSONString:]);
+  Log(@"%@", [[self.item toDictionary] toJSONString]);
   if (self.delegate && [self.delegate respondsToSelector:@selector(didToggle:item:indexPath:)]) {
     LAContext *context = [LAContext new];
     [context canUseBiometrics:LAPolicyDeviceOwnerAuthenticationWithBiometrics reason:@"Get Atuh" reply:^(BOOL success, NSError *error, NSInteger code) {
