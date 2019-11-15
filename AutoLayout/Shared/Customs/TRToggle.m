@@ -19,10 +19,10 @@
   if (self) {
     // Create control
     _control = [[UISegmentedControl alloc] initWithItems:@[@"Yes", @"Non"]];
-    [_control addTarget:self action:@selector(onChange:) forControlEvents:UIControlEventValueChanged];
     [self addSubview:_control];
     [self updateControlFrame];
     [self setIsOn:isOn];
+    [_control addTarget:self action:@selector(onChange:) forControlEvents:UIControlEventValueChanged];
   }
 
   return self;
@@ -155,6 +155,11 @@
 - (UIFont *)getFontForState:(UIControlState)state {
   NSDictionary *attributes = [_control titleTextAttributesForState:state];
   return attributes ? attributes[NSFontAttributeName] : nil;
+}
+
+- (void)dealloc {
+  [_control removeTarget:self action:@selector(onChange:) forControlEvents:UIControlEventValueChanged];
+  _control = nil;
 }
 
 @end
