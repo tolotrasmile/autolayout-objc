@@ -26,6 +26,7 @@
 		72C5606474DF479F8FC6F52C /* UIView+NSLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56BF6DAD2B2962B79C6CF /* UIView+NSLayoutConstraint.m */; };
 		72C5614678ACB49940E41A8D /* LAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C567A30B245481D794AAB3 /* LAViewController.m */; };
 		72C5627241B11199B8B52B87 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72C56C71396FB5D2AECE2AB6 /* Localizable.strings */; };
+		72C562A0A69AF4E31FC60C8E /* TRToggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C562F89DC755A3A4E8F37C /* TRToggle.m */; };
 		72C565100C27C0C9E0D75329 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C567D3B052949F4B2D7E8C /* UIViewController+Extension.m */; };
 		72C56525324DF56A1CDE6AD9 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56C921F7DEE8D51DFA1EA /* UIView+Extension.m */; };
 		72C5652853D36E4059B93B81 /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56A4BCA9BA055BF6D8CB3 /* Plist.m */; };
@@ -108,6 +109,7 @@
 		72C562535A0225BA3794D1AB /* CustomSafeAreaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSafeAreaView.h; sourceTree = "<group>"; };
 		72C562677F05AAE3597267CD /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
 		72C5628FAF103CE5BAB90382 /* TodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoViewController.h; sourceTree = "<group>"; };
+		72C562F89DC755A3A4E8F37C /* TRToggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRToggle.m; sourceTree = "<group>"; };
 		72C562FAD9DF803C7766BAFE /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		72C56317750B502F51ED3FE0 /* CustomSafeAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSafeAreaView.m; sourceTree = "<group>"; };
 		72C563263FE81600A1AF01ED /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		72C56B54ED8E2A6149C704DD /* TodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoViewController.m; sourceTree = "<group>"; };
 		72C56BF6DAD2B2962B79C6CF /* UIView+NSLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NSLayoutConstraint.m"; sourceTree = "<group>"; };
 		72C56C71396FB5D2AECE2AB6 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		72C56C860FC66624F826F356 /* TRToggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRToggle.h; sourceTree = "<group>"; };
 		72C56C921F7DEE8D51DFA1EA /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		72C56C92B7793C977A29882B /* UIApplication+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Extension.m"; sourceTree = "<group>"; };
 		72C56CA067BFED3890D3373F /* LAContext+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LAContext+Extension.h"; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				4CE435322363326E006D5E97 /* TRButton.m */,
 				72C564C93AF0C755F07622D3 /* TRWebViewController.m */,
 				72C561049155AF002C96E732 /* TRWebViewController.h */,
+				72C562F89DC755A3A4E8F37C /* TRToggle.m */,
+				72C56C860FC66624F826F356 /* TRToggle.h */,
 			);
 			path = Customs;
 			sourceTree = "<group>";
@@ -665,6 +670,7 @@
 				72C5652853D36E4059B93B81 /* Plist.m in Sources */,
 				72C567B5E160902B20FCE753 /* TRWebViewController.m in Sources */,
 				72C56C1664F8C559825C3C26 /* NSDictionary+JSON.m in Sources */,
+				72C562A0A69AF4E31FC60C8E /* TRToggle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
