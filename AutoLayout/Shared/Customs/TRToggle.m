@@ -61,9 +61,8 @@
 
 /**
  * Get selected index from input value
- * TRUE: 0, FALSE: 1
- * @param isOn
- * @return
+ * @param isOn Input state
+ * @return  TRUE: 0, FALSE: 1
  */
 - (NSUInteger)getIndexFromBool:(BOOL)isOn {
   return isOn ? 0 : 1;
@@ -71,9 +70,8 @@
 
 /**
  * Get boolean value from selected index
- * 0: TRUE, 1: FALSE
- * @param index
- * @return
+ * @param index Input index
+ * @return 0: TRUE, 1: FALSE
  */
 - (BOOL)getBoolFromIndex:(NSUInteger)index {
   return index == 0;
@@ -83,7 +81,7 @@
 
 /**
  * Get ON value
- * @return
+ * @return BOOL value
  */
 - (BOOL)getIsOn {
   return _value;
@@ -91,7 +89,7 @@
 
 /**
  * Set ON value
- * @param isOn
+ * @param isOn New value
  */
 - (void)setIsOn:(BOOL)isOn {
   _value = isOn;
@@ -101,7 +99,7 @@
 
 /**
  * Set upper casing value
- * @param isUpperCaseTitle
+ * @param isUpperCaseTitle New title
  */
 - (void)setIsUpperCaseTitle:(BOOL)isUpperCaseTitle {
   _isUpperCaseTitle = isUpperCaseTitle;
@@ -111,7 +109,7 @@
 
 /**
  * Get upper casing value
- * @return
+ * @return TRUE/FALSE
  */
 - (BOOL)getIsUpperCaseTitle {
   return _isUpperCaseTitle;
@@ -119,8 +117,8 @@
 
 /**
  * Set title for state
- * @param title
- * @param isOn
+ * @param title New title
+ * @param state State (TRUE/FALSE)
  */
 - (void)setTitle:(NSString *)title forState:(BOOL)state {
   NSUInteger index = [self getIndexFromBool:state];

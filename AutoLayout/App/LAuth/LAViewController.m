@@ -89,7 +89,6 @@
   [NSNotificationCenter.defaultCenter removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
-
 - (void)onClick:(NSObject *)sender {
   LAContext *context = [LAContext new];
   context.localizedFallbackTitle = @"";

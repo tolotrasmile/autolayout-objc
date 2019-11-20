@@ -24,8 +24,8 @@ typedef NS_ENUM(NSInteger, BiometryType) {
  * @param reply
  */
 - (void)canUseBiometrics:(LAPolicy)policy
-               reason:(NSString *)reason
-                reply:(void (^)(BOOL success, NSError *__nullable error, NSInteger code))reply;
+                  reason:(NSString *)reason
+                   reply:(void (^)(BOOL success, NSError *__nullable error, NSInteger code))reply;
 
 - (BOOL)canUseBiometrics:(LAPolicy)policy;
 

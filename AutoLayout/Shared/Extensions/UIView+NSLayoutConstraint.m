@@ -40,13 +40,16 @@
 }
 
 - (void)enableSafeArea:(UIView *)view {
-  [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-
-  UILayoutGuide *guide = view.safeAreaLayoutGuide;
-  [self.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor].active = YES;
-  [self.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor].active = YES;
-  [self.topAnchor constraintEqualToAnchor:guide.topAnchor].active = YES;
-  [self.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor].active = YES;
+  if (@available(iOS 11.0, *)) {
+    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    UILayoutGuide *guide = view.safeAreaLayoutGuide;
+    [NSLayoutConstraint activateConstraints:@[
+        [self.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor],
+        [self.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor],
+        [self.topAnchor constraintEqualToAnchor:guide.topAnchor],
+        [self.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor]
+    ]];
+  }
 
   [self layoutIfNeeded];
 }
