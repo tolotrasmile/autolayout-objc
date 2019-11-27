@@ -20,23 +20,19 @@ typedef NS_OPTIONS(NSUInteger, TRButtonStyle) {
 
 // TODO: Implement style
 @property(nonatomic) TRButtonStyle style;
-@property(nonatomic, strong) UIColor *textColor;
-@property(nonatomic, strong) UIFont *font;
+@property(nullable, nonatomic, copy, getter=getText, setter=setText:) NSString *text;
+@property(null_resettable, nonatomic, strong) UIColor *textColor;
+@property(null_resettable, nonatomic, strong, getter=getBorderColor, setter=setBorderColor:) UIColor *borderColor;
+@property(null_resettable, nonatomic, strong) UIFont *font;
 @property(nonatomic) UIEdgeInsets insets;
-@property(nonatomic, readonly, getter=isLoading) BOOL loading;
+@property(nonatomic, getter=isLoading, setter=setIsLoading:) BOOL loading;
 @property(nonatomic) CGFloat cornerRadius;
 
 - (void)setEdgeInsets:(UIEdgeInsets)edgeInsets;
 
-- (void)setText:(nullable NSString *)text;
-
 - (void)setGradientColors:(NSArray *)colors;
 
 - (void)setEnabled:(BOOL)isEnabled;
-
-- (void)setEnabled:(BOOL)isEnabled animated:(BOOL)animated;
-
-- (void)setIsLoading:(BOOL)isLoading;
 
 @end
 

@@ -44,7 +44,7 @@
     button.translatesAutoresizingMaskIntoConstraints = NO;
     button.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
     button.cornerRadius = 8;
-    button.isLoading = isLoading;
+    button.loading = isLoading;
     [container addSubview:button];
 
     [button addConstraints:@[[button constrainToHeight:50]]];

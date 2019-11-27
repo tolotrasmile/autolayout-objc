@@ -40,9 +40,9 @@ const static CGFloat TRButtonAnimationDuration = 0.5f;
   [self setText:@"button"];
 
   loader.alpha = 0;
-  loader.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
-  loader.color = UIColor.whiteColor;
-  loader.hidesWhenStopped = true;
+  loader.backgroundColor = UIColor.redColor;
+  loader.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+  loader.color = UIColor.redColor;
 
   self.insets = UIEdgeInsetsZero;
 }
@@ -79,9 +79,11 @@ const static CGFloat TRButtonAnimationDuration = 0.5f;
 }
 
 - (void)setText:(nullable NSString *)text {
-  if (text != nil) {
-    titleLabel.text = [text uppercaseString];
-  }
+  titleLabel.text = text;
+}
+
+- (nullable NSString *)getText {
+  return titleLabel.text;
 }
 
 - (UIColor *)textColor {
@@ -96,6 +98,14 @@ const static CGFloat TRButtonAnimationDuration = 0.5f;
   titleLabel.textColor = textColor;
 }
 
+- (UIColor *)getBorderColor {
+  return [UIColor colorWithCGColor:self.layer.borderColor];
+}
+
+- (void)setBorderColor:(UIColor *)borderColor {
+  self.layer.borderColor = borderColor.CGColor;
+}
+
 - (UIFont *)font {
   return titleLabel.font;
 }
@@ -108,8 +118,8 @@ const static CGFloat TRButtonAnimationDuration = 0.5f;
   CAGradientLayer *gradient = [CAGradientLayer layer];
   gradient.frame = self.bounds;
   gradient.colors = colors;
-  gradient.startPoint = CGPointZero;
-  gradient.endPoint = CGPointMake(1, 1);
+  gradient.startPoint = CGPointMake(0, 1);
+  gradient.endPoint = CGPointMake(1, 0);
   [self.layer insertSublayer:gradient atIndex:0];
 }
 
@@ -117,28 +127,11 @@ const static CGFloat TRButtonAnimationDuration = 0.5f;
   return loading;
 }
 
-- (void)setEnabled:(BOOL)isEnabled {
-  [self setEnabled:isEnabled animated:FALSE];
-}
-
-- (void)setEnabled:(BOOL)isEnabled animated:(BOOL)animated {
-  [super setEnabled:isEnabled];
-  CGFloat alpha = isEnabled ? 1.0 : 0.3;
-
-  if (animated) {
-    __weak __typeof__(self) weakSelf = self;
-    [UIView animateWithDuration:TRButtonAnimationDuration animations:^{
-      [weakSelf setBackgroundColor:self.backgroundColor opacity:alpha];
-    }];
-  } else {
-    [self setBackgroundColor:self.backgroundColor opacity:alpha];
-  }
-}
-
 - (void)setIsLoading:(BOOL)isLoading {
   loading = isLoading;
   __weak __typeof__(loader) weakLoader = loader;
   if (isLoading) {
+    loader.hidden = false;
     [weakLoader startAnimating];
     [UIView animateWithDuration:TRButtonAnimationDuration animations:^{
       titleLabel.alpha = 0;
@@ -147,6 +140,7 @@ const static CGFloat TRButtonAnimationDuration = 0.5f;
     [weakLoader stopAnimating];
     [UIView animateWithDuration:TRButtonAnimationDuration animations:^{
       titleLabel.alpha = 1;
+      loader.hidden = true;
     }];
   }
 }
