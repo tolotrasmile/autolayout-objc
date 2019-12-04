@@ -14,6 +14,7 @@
 		4C0F95E0236B168F001B029D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F95DF236B168F001B029D /* File.swift */; };
 		4C3017952354B63D00AE7F61 /* TodoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3017942354B63D00AE7F61 /* TodoCell.m */; };
 		4C4E5D89236893650096AC3C /* UILabel+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4E5D88236893650096AC3C /* UILabel+Utility.m */; };
+		4CC3B4F52391685D001181C5 /* UIImage+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC3B4E22391685C001181C5 /* UIImage+Custom.m */; };
 		4CE4352C2362EFE2006D5E97 /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4352B2362EFE2006D5E97 /* UITableView+Extension.m */; };
 		4CE4352F236319B5006D5E97 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4352E236319B5006D5E97 /* UIButton+Extension.m */; };
 		4CE435332363326F006D5E97 /* TRButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE435322363326E006D5E97 /* TRButton.m */; };
@@ -83,6 +84,8 @@
 		4C3017942354B63D00AE7F61 /* TodoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoCell.m; sourceTree = "<group>"; };
 		4C4E5D87236893650096AC3C /* UILabel+Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Utility.h"; sourceTree = "<group>"; };
 		4C4E5D88236893650096AC3C /* UILabel+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Utility.m"; sourceTree = "<group>"; };
+		4CC3B4E22391685C001181C5 /* UIImage+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Custom.m"; sourceTree = "<group>"; };
+		4CC3B4ED2391685D001181C5 /* UIImage+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Custom.h"; sourceTree = "<group>"; };
 		4CE4352A2362EFE2006D5E97 /* UITableView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extension.h"; sourceTree = "<group>"; };
 		4CE4352B2362EFE2006D5E97 /* UITableView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extension.m"; sourceTree = "<group>"; };
 		4CE4352D236319B5006D5E97 /* UIButton+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
@@ -323,6 +326,8 @@
 		72C56158A7C27779474B2184 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4CC3B4ED2391685D001181C5 /* UIImage+Custom.h */,
+				4CC3B4E22391685C001181C5 /* UIImage+Custom.m */,
 				72C56BF6DAD2B2962B79C6CF /* UIView+NSLayoutConstraint.m */,
 				72C56C921F7DEE8D51DFA1EA /* UIView+Extension.m */,
 				72C567E65464F0D8998B0265 /* UIView+AutoLayout.m */,
@@ -672,6 +677,7 @@
 				72C56F461AF2E05A237F11BB /* LATableViewCell.m in Sources */,
 				72C5614678ACB49940E41A8D /* LAViewController.m in Sources */,
 				4C4E5D89236893650096AC3C /* UILabel+Utility.m in Sources */,
+				4CC3B4F52391685D001181C5 /* UIImage+Custom.m in Sources */,
 				72C56FB1D212C0D2F4E92824 /* LAContext+Extension.m in Sources */,
 				72C56556BEBFCC84BB188815 /* UIApplication+Extension.m in Sources */,
 				72C565100C27C0C9E0D75329 /* UIViewController+Extension.m in Sources */,

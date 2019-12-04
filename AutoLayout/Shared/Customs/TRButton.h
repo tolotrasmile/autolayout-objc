@@ -32,8 +32,6 @@ typedef NS_OPTIONS(NSUInteger, TRButtonStyle) {
 
 - (void)setGradientColors:(NSArray *)colors;
 
-- (void)setEnabled:(BOOL)isEnabled;
-
 @end
 
 NS_ASSUME_NONNULL_END
