@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,7 @@
 		72C56F461AF2E05A237F11BB /* LATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56E0152DD9D5973301058 /* LATableViewCell.m */; };
 		72C56FB1D212C0D2F4E92824 /* LAContext+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C5671D80962F183C4D35D2 /* LAContext+Extension.m */; };
 		72C56FD911AFD77651E00F21 /* NSOperationQueue+CWSharedQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C56A34CF38B1BDE7511E6D /* NSOperationQueue+CWSharedQueue.m */; };
+		84C7BB6723A3CC2500F4E07D /* TRTouchable.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C7BB6623A3CC2500F4E07D /* TRTouchable.m */; };
 		A6B8447B71AA1DDCFE47EEC0 /* libPods-AutoLayoutUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 883F07AB5058CC1B187C0FDE /* libPods-AutoLayoutUITests.a */; };
 		D22C1D864CDF55EB0D290486 /* libPods-AutoLayoutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DB5B65C0BE3097B2C2D02C /* libPods-AutoLayoutTests.a */; };
 		F783E812C4EC996B05937119 /* libPods-AutoLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B783D1DF343C68B89EAD36 /* libPods-AutoLayout.a */; };
@@ -152,6 +153,8 @@
 		72C56F76020FAB7A42EC3DA4 /* Functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Functions.h; sourceTree = "<group>"; };
 		72C56F7D90F867510035466D /* NSOperationQueue+CWSharedQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+CWSharedQueue.h"; sourceTree = "<group>"; };
 		72C56FB936ACA6B0AA153D1D /* LATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATableViewCell.h; sourceTree = "<group>"; };
+		84C7BB6523A3CC2500F4E07D /* TRTouchable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRTouchable.h; sourceTree = "<group>"; };
+		84C7BB6623A3CC2500F4E07D /* TRTouchable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TRTouchable.m; sourceTree = "<group>"; };
 		883F07AB5058CC1B187C0FDE /* libPods-AutoLayoutUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoLayoutUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF7397FCCF3278FBB8ABA793 /* Pods-AutoLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoLayout.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoLayout/Pods-AutoLayout.release.xcconfig"; sourceTree = "<group>"; };
 		CBC7C7EC22D2A54221DD9BB4 /* Pods-AutoLayoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoLayoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoLayoutTests/Pods-AutoLayoutTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -265,6 +268,8 @@
 				72C561049155AF002C96E732 /* TRWebViewController.h */,
 				72C562F89DC755A3A4E8F37C /* TRToggle.m */,
 				72C56C860FC66624F826F356 /* TRToggle.h */,
+				84C7BB6523A3CC2500F4E07D /* TRTouchable.h */,
+				84C7BB6623A3CC2500F4E07D /* TRTouchable.m */,
 			);
 			path = Customs;
 			sourceTree = "<group>";
@@ -583,30 +588,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AutoLayout/Pods-AutoLayout-resources.sh",
-				"${PODS_ROOT}/FontAwesomeKit/FontAwesomeKit/FontAwesome.otf",
-				"${PODS_ROOT}/FontAwesomeKit/FontAwesomeKit/foundation-icons.ttf",
-				"${PODS_ROOT}/FontAwesomeKit/FontAwesomeKit/ionicons.ttf",
-				"${PODS_ROOT}/FontAwesomeKit/FontAwesomeKit/Material-Design-Iconic-Font.ttf",
-				"${PODS_ROOT}/FontAwesomeKit/FontAwesomeKit/octicons.ttf",
-				"${PODS_ROOT}/FontAwesomeKit/FontAwesomeKit/zocial-regular-webfont.ttf",
+				"${PODS_ROOT}/Target Support Files/Pods-AutoLayout/Pods-AutoLayout-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.otf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/foundation-icons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ionicons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Material-Design-Iconic-Font.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/octicons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zocial-regular-webfont.ttf",
+				"${PODS_ROOT}/Target Support Files/Pods-AutoLayout/Pods-AutoLayout-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoLayout/Pods-AutoLayout-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoLayout/Pods-AutoLayout-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		31FE4E1AA23D583E43D60CAD /* [CP] Check Pods Manifest.lock */ = {
@@ -665,6 +655,7 @@
 				4C3017952354B63D00AE7F61 /* TodoCell.m in Sources */,
 				72C56A2742FF65351AC29378 /* CustomSafeAreaView.m in Sources */,
 				4CE4352C2362EFE2006D5E97 /* UITableView+Extension.m in Sources */,
+				84C7BB6723A3CC2500F4E07D /* TRTouchable.m in Sources */,
 				72C5606474DF479F8FC6F52C /* UIView+NSLayoutConstraint.m in Sources */,
 				4C0F95D6236AE2D6001B029D /* SettingsCell.m in Sources */,
 				72C56525324DF56A1CDE6AD9 /* UIView+Extension.m in Sources */,

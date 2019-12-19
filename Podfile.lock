@@ -29,7 +29,7 @@ DEPENDENCIES:
   - Masonry
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - FontAwesomeKit
     - JSONModel
     - Masonry
@@ -41,4 +41,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 7f3dc3493884a6e16930983e377f0bd343bdc0ab
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
